@@ -1,0 +1,37 @@
+"""
+Database package for SmartSupport AI
+"""
+from src.database.models import (
+    Base, User, Conversation, Message, 
+    Feedback, Analytics, KnowledgeBase
+)
+from src.database.connection import (
+    engine, SessionLocal, init_db, 
+    get_db, get_db_context, close_db
+)
+from src.database.queries import (
+    UserQueries, ConversationQueries, MessageQueries,
+    FeedbackQueries, AnalyticsQueries, KnowledgeBaseQueries
+)
+
+__all__ = [
+    "Base",
+    "User",
+    "Conversation",
+    "Message",
+    "Feedback",
+    "Analytics",
+    "KnowledgeBase",
+    "engine",
+    "SessionLocal",
+    "init_db",
+    "get_db",
+    "get_db_context",
+    "close_db",
+    "UserQueries",
+    "ConversationQueries",
+    "MessageQueries",
+    "FeedbackQueries",
+    "AnalyticsQueries",
+    "KnowledgeBaseQueries",
+]

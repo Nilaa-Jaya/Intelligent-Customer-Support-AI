@@ -1,0 +1,167 @@
+"""
+Utility helper functions
+"""
+from datetime import datetime, timedelta
+from typing import Optional, Dict, Any
+import hashlib
+import json
+
+
+def generate_conversation_id() -> str:
+    """Generate unique conversation ID"""
+    timestamp = datetime.now().isoformat()
+    hash_obj = hashlib.md5(timestamp.encode())
+    return f"conv_{hash_obj.hexdigest()[:12]}"
+
+
+def calculate_priority_score(
+    sentiment: str,
+    category: str,
+    is_repeat_query: bool = False,
+    is_vip: bool = False
+) -> int:
+    """
+    Calculate priority score for query routing
+
+    Priority Scale:
+    1-3: Low (normal queries)
+    4-6: Medium (negative sentiment)
+    7-8: High (angry/urgent)
+    9-10: Critical (angry + repeat/VIP)
+    """
+    score = 3  # Base score (reduced from 5)
+
+    # Sentiment adjustments (reduced to be less aggressive)
+    sentiment_scores = {
+        "Negative": 2,  # Was 3
+        "Angry": 3,     # Was 4
+        "Neutral": 0,
+        "Positive": 0   # Was -1
+    }
+    score += sentiment_scores.get(sentiment, 0)
+
+    # Category adjustments (removed to reduce score inflation)
+    # Technical and Billing no longer get automatic bonus
+
+    # Repeat query adjustment
+    if is_repeat_query:
+        score += 2
+
+    # VIP adjustment
+    if is_vip:
+        score += 2
+
+    # Clamp between 1 and 10
+    return max(1, min(10, score))
+
+
+def should_escalate(
+    sentiment: str,
+    priority_score: int,
+    attempt_count: int = 1,
+    keywords: Optional[list] = None
+) -> bool:
+    """
+    Determine if query should be escalated to human agent
+    """
+    # Escalation keywords
+    escalation_keywords = [
+        "lawsuit", "legal", "lawyer", "attorney",
+        "cancel", "refund", "manager", "speak to human",
+        "unacceptable", "disgusted", "angry", "frustrated"
+    ]
+    
+    # Check for escalation conditions
+    if priority_score >= 8:
+        return True
+    
+    if sentiment in ["Angry", "Very Negative"] and attempt_count >= 1:
+        return True
+    
+    if attempt_count >= 3:
+        return True
+    
+    if keywords:
+        keyword_lower = [k.lower() for k in keywords]
+        if any(ek in " ".join(keyword_lower) for ek in escalation_keywords):
+            return True
+    
+    return False
+
+
+def format_response(
+    response: str,
+    category: str,
+    sentiment: str,
+    priority: int,
+    conversation_id: str,
+    metadata: Optional[Dict[str, Any]] = None
+) -> Dict[str, Any]:
+    """Format agent response with metadata"""
+    return {
+        "conversation_id": conversation_id,
+        "response": response,
+        "category": category,
+        "sentiment": sentiment,
+        "priority": priority,
+        "timestamp": datetime.now().isoformat(),
+        "metadata": metadata or {}
+    }
+
+
+def parse_llm_category(raw_category: str) -> str:
+    """Parse and standardize category from LLM response"""
+    category_lower = raw_category.lower()
+    
+    if "technical" in category_lower or "tech" in category_lower:
+        return "Technical"
+    elif "billing" in category_lower or "payment" in category_lower or "invoice" in category_lower:
+        return "Billing"
+    elif "account" in category_lower:
+        return "Account"
+    elif "general" in category_lower:
+        return "General"
+    else:
+        return "General"
+
+
+def parse_llm_sentiment(raw_sentiment: str) -> str:
+    """Parse and standardize sentiment from LLM response"""
+    sentiment_lower = raw_sentiment.lower()
+    
+    if "negative" in sentiment_lower or "angry" in sentiment_lower or "frustrated" in sentiment_lower:
+        if "very" in sentiment_lower or "extremely" in sentiment_lower or "angry" in sentiment_lower:
+            return "Angry"
+        return "Negative"
+    elif "positive" in sentiment_lower or "happy" in sentiment_lower or "satisfied" in sentiment_lower:
+        return "Positive"
+    else:
+        return "Neutral"
+
+
+def truncate_text(text: str, max_length: int = 100) -> str:
+    """Truncate text to max length"""
+    if len(text) <= max_length:
+        return text
+    return text[:max_length-3] + "..."
+
+
+class Timer:
+    """Simple timer context manager"""
+    
+    def __init__(self, name: str = "Operation"):
+        self.name = name
+        self.start_time = None
+        self.end_time = None
+        self.elapsed = None
+    
+    def __enter__(self):
+        self.start_time = datetime.now()
+        return self
+    
+    def __exit__(self, *args):
+        self.end_time = datetime.now()
+        self.elapsed = (self.end_time - self.start_time).total_seconds()
+    
+    def __str__(self):
+        return f"{self.name}: {self.elapsed:.3f}s"
