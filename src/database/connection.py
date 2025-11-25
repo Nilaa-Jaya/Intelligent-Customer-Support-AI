@@ -1,6 +1,8 @@
 """
 Database connection management
 """
+
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.pool import StaticPool
@@ -14,21 +16,34 @@ from src.utils.logger import app_logger
 
 # Create engine
 if settings.database_url.startswith("sqlite"):
-    # SQLite specific configuration
+    # SQLite specific configuration (local development)
     engine = create_engine(
         settings.database_url,
         connect_args={"check_same_thread": False},
         poolclass=StaticPool,
-        echo=settings.debug
+        echo=settings.debug,
     )
+    app_logger.info("Using SQLite database (local development)")
 else:
-    # PostgreSQL configuration
+    # PostgreSQL configuration (production/Railway)
+    # Railway PostgreSQL requires SSL, add connect_args for SSL if in production
+    connect_args = {}
+
+    # Enable SSL for production PostgreSQL (Railway)
+    if settings.environment == "production" or os.getenv("RAILWAY_ENVIRONMENT"):
+        connect_args["sslmode"] = "require"
+        app_logger.info("Using PostgreSQL with SSL (production)")
+    else:
+        app_logger.info("Using PostgreSQL without SSL (development)")
+
     engine = create_engine(
         settings.database_url,
-        pool_pre_ping=True,
-        pool_size=10,
-        max_overflow=20,
-        echo=settings.debug
+        connect_args=connect_args,
+        pool_pre_ping=True,  # Verify connections before using
+        pool_size=10,  # Number of connections to maintain
+        max_overflow=20,  # Maximum overflow connections
+        pool_recycle=3600,  # Recycle connections after 1 hour
+        echo=settings.debug,
     )
 
 # Create session factory

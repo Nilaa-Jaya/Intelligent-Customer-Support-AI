@@ -1,6 +1,7 @@
 """
 Utility modules for SmartSupport AI
 """
+
 from src.utils.config import settings, get_settings
 from src.utils.logger import app_logger
 from src.utils.helpers import (
@@ -11,7 +12,7 @@ from src.utils.helpers import (
     parse_llm_category,
     parse_llm_sentiment,
     truncate_text,
-    Timer
+    Timer,
 )
 
 __all__ = [
@@ -25,5 +26,5 @@ __all__ = [
     "parse_llm_category",
     "parse_llm_sentiment",
     "truncate_text",
-    "Timer"
+    "Timer",
 ]

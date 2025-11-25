@@ -2,6 +2,7 @@
 Test script for SmartSupport AI
 Run this to verify your installation and test the system
 """
+
 import sys
 from pathlib import Path
 
@@ -15,11 +16,11 @@ from src.utils.logger import app_logger
 
 def test_basic_queries():
     """Test basic query processing"""
-    
-    print("\n" + "="*80)
+
+    print("\n" + "=" * 80)
     print("SmartSupport AI - Test Suite")
-    print("="*80 + "\n")
-    
+    print("=" * 80 + "\n")
+
     # Initialize database
     print("Initializing database...")
     try:
@@ -28,7 +29,7 @@ def test_basic_queries():
     except Exception as e:
         print(f"❌ Database initialization failed: {e}\n")
         return
-    
+
     # Initialize agent
     print("Initializing customer support agent...")
     try:
@@ -37,52 +38,51 @@ def test_basic_queries():
     except Exception as e:
         print(f"❌ Agent initialization failed: {e}\n")
         return
-    
+
     # Test queries
     test_cases = [
         {
             "query": "I can't log into my account",
             "expected_category": "Account",
-            "description": "Account access issue"
+            "description": "Account access issue",
         },
         {
             "query": "Why was I charged twice this month?",
             "expected_category": "Billing",
-            "description": "Billing inquiry"
+            "description": "Billing inquiry",
         },
         {
             "query": "My app keeps crashing when I try to export data",
             "expected_category": "Technical",
-            "description": "Technical problem"
+            "description": "Technical problem",
         },
         {
             "query": "This is absolutely unacceptable! I want to speak to a manager NOW!",
             "expected_category": None,
-            "description": "Angry customer - should escalate"
+            "description": "Angry customer - should escalate",
         },
         {
             "query": "What are your business hours?",
             "expected_category": "General",
-            "description": "General information"
-        }
+            "description": "General information",
+        },
     ]
-    
+
     print("Running test queries...\n")
-    print("="*80)
-    
+    print("=" * 80)
+
     for i, test_case in enumerate(test_cases, 1):
         print(f"\nTest Case {i}: {test_case['description']}")
         print("-" * 80)
         print(f"Query: {test_case['query']}")
         print()
-        
+
         try:
             # Process query
             response = agent.process_query(
-                query=test_case['query'],
-                user_id="test_user_001"
+                query=test_case["query"], user_id="test_user_001"
             )
-            
+
             # Display results
             print(f"✅ Processed successfully")
             print(f"   Category: {response['category']}")
@@ -92,31 +92,35 @@ def test_basic_queries():
             print(f"   Processing Time: {response['metadata']['processing_time']:.3f}s")
             print(f"\n   Response Preview:")
             print(f"   {response['response'][:200]}...")
-            
+
             # Verify expected category (if not escalated)
-            if test_case['expected_category']:
-                if response['category'] == test_case['expected_category']:
-                    print(f"   ✓ Category matches expected: {test_case['expected_category']}")
+            if test_case["expected_category"]:
+                if response["category"] == test_case["expected_category"]:
+                    print(
+                        f"   ✓ Category matches expected: {test_case['expected_category']}"
+                    )
                 else:
-                    print(f"   ⚠ Category mismatch - Expected: {test_case['expected_category']}, Got: {response['category']}")
-            
+                    print(
+                        f"   ⚠ Category mismatch - Expected: {test_case['expected_category']}, Got: {response['category']}"
+                    )
+
             # Check escalation for angry query
-            if "unacceptable" in test_case['query'].lower():
-                if response['metadata'].get('escalated'):
+            if "unacceptable" in test_case["query"].lower():
+                if response["metadata"].get("escalated"):
                     print(f"   ✓ Correctly escalated angry customer")
                 else:
                     print(f"   ⚠ Should have escalated but didn't")
-        
+
         except Exception as e:
             print(f"❌ Error processing query: {e}")
             app_logger.error(f"Test case {i} failed", exc_info=True)
-        
+
         print("-" * 80)
-    
-    print("\n" + "="*80)
+
+    print("\n" + "=" * 80)
     print("Test Suite Complete!")
-    print("="*80 + "\n")
-    
+    print("=" * 80 + "\n")
+
     # Test conversation history
     print("Testing conversation history retrieval...")
     try:
@@ -126,7 +130,7 @@ def test_basic_queries():
             print(f"   - {conv['category']}: {conv['query'][:50]}...")
     except Exception as e:
         print(f"❌ Error retrieving history: {e}")
-    
+
     print("\n✨ All tests complete! System is ready to use.\n")
 
 
