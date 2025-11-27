@@ -25,18 +25,18 @@ def test_basic_queries():
     print("Initializing database...")
     try:
         init_db()
-        print("✅ Database initialized successfully\n")
+        print("[DONE] Database initialized successfully\n")
     except Exception as e:
-        print(f"❌ Database initialization failed: {e}\n")
+        print(f"[FAIL] Database initialization failed: {e}\n")
         return
 
     # Initialize agent
     print("Initializing customer support agent...")
     try:
         agent = get_customer_support_agent()
-        print("✅ Agent initialized successfully\n")
+        print("[DONE] Agent initialized successfully\n")
     except Exception as e:
-        print(f"❌ Agent initialization failed: {e}\n")
+        print(f"[FAIL] Agent initialization failed: {e}\n")
         return
 
     # Test queries
@@ -84,7 +84,7 @@ def test_basic_queries():
             )
 
             # Display results
-            print(f"✅ Processed successfully")
+            print(f"[DONE] Processed successfully")
             print(f"   Category: {response['category']}")
             print(f"   Sentiment: {response['sentiment']}")
             print(f"   Priority: {response['priority']}")
@@ -97,7 +97,7 @@ def test_basic_queries():
             if test_case["expected_category"]:
                 if response["category"] == test_case["expected_category"]:
                     print(
-                        f"   ✓ Category matches expected: {test_case['expected_category']}"
+                        f"   [OK] Category matches expected: {test_case['expected_category']}"
                     )
                 else:
                     print(
@@ -107,12 +107,12 @@ def test_basic_queries():
             # Check escalation for angry query
             if "unacceptable" in test_case["query"].lower():
                 if response["metadata"].get("escalated"):
-                    print(f"   ✓ Correctly escalated angry customer")
+                    print(f"   [OK] Correctly escalated angry customer")
                 else:
                     print(f"   ⚠ Should have escalated but didn't")
 
         except Exception as e:
-            print(f"❌ Error processing query: {e}")
+            print(f"[FAIL] Error processing query: {e}")
             app_logger.error(f"Test case {i} failed", exc_info=True)
 
         print("-" * 80)
@@ -125,13 +125,13 @@ def test_basic_queries():
     print("Testing conversation history retrieval...")
     try:
         history = agent.get_conversation_history("test_user_001", limit=5)
-        print(f"✅ Retrieved {len(history)} conversations")
+        print(f"[DONE] Retrieved {len(history)} conversations")
         for conv in history:
             print(f"   - {conv['category']}: {conv['query'][:50]}...")
     except Exception as e:
-        print(f"❌ Error retrieving history: {e}")
+        print(f"[FAIL] Error retrieving history: {e}")
 
-    print("\n✨ All tests complete! System is ready to use.\n")
+    print("\n All tests complete! System is ready to use.\n")
 
 
 if __name__ == "__main__":

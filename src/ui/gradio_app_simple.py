@@ -129,7 +129,7 @@ def process_message(message: str, history: List[Tuple[str, str]]):
                     <p style='margin: 5px 0;'><strong>Processing Time:</strong> {processing_time:.2f}s</p>
                 </div>
             </div>
-            {f'<p style="color: #ef4444; font-weight: 600; margin-top: 10px;">⚠️ Escalated: {metadata.get("escalation_reason", "")}</p>' if escalated else ''}
+            {f'<p style="color: #ef4444; font-weight: 600; margin-top: 10px;">WARNING: Escalated: {metadata.get("escalation_reason", "")}</p>' if escalated else ''}
         </div>
         """
 
@@ -186,12 +186,12 @@ def create_simple_interface():
 
             # Side panel
             with gr.Column(scale=1):
-                gr.Markdown("### 📊 Query Analysis")
+                gr.Markdown("###  Query Analysis")
                 metadata_display = gr.HTML(
                     value="<p style='color: #6b7280;'>Submit a query to see analysis</p>"
                 )
 
-                gr.Markdown("### 📚 Knowledge Base Results")
+                gr.Markdown("###  Knowledge Base Results")
                 kb_display = gr.HTML(
                     value="<p style='color: #6b7280; font-style: italic;'>Knowledge base results will appear here</p>"
                 )

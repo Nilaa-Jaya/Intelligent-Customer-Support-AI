@@ -16,7 +16,7 @@ from src.main import get_customer_support_agent
 def print_header():
     """Print welcome header"""
     print("\n" + "=" * 80)
-    print("🤖 SmartSupport AI - Interactive Customer Support Agent")
+    print(" SmartSupport AI - Interactive Customer Support Agent")
     print("=" * 80)
     print("\nCommands:")
     print("  - Type your query to get support")
@@ -30,17 +30,17 @@ def print_header():
 def print_response(response):
     """Pretty print response"""
     print("\n" + "─" * 80)
-    print(f"📊 Category: {response['category']}")
+    print(f" Category: {response['category']}")
     print(f"😊 Sentiment: {response['sentiment']}")
-    print(f"⭐ Priority: {response['priority']}/10")
-    print(f"⏱️  Processing Time: {response['metadata']['processing_time']:.3f}s")
+    print(f"* Priority: {response['priority']}/10")
+    print(f"  Processing Time: {response['metadata']['processing_time']:.3f}s")
 
     if response["metadata"].get("escalated"):
         print(
             f"🚨 Escalated: Yes - {response['metadata'].get('escalation_reason', 'N/A')}"
         )
 
-    print("\n💬 Response:")
+    print("\n Response:")
     print(response["response"])
     print("─" * 80 + "\n")
 
@@ -52,11 +52,11 @@ def print_history(history):
         return
 
     print("\n" + "─" * 80)
-    print(f"📚 Conversation History ({len(history)} conversations)")
+    print(f" Conversation History ({len(history)} conversations)")
     print("─" * 80)
 
     for i, conv in enumerate(history, 1):
-        status = "🚨 ESCALATED" if conv["escalated"] else "✅ RESOLVED"
+        status = "🚨 ESCALATED" if conv["escalated"] else "[DONE] RESOLVED"
         print(f"\n{i}. [{conv['category']}] {status}")
         print(f"   Query: {conv['query'][:70]}...")
         print(f"   Time: {conv['timestamp']}")
@@ -74,9 +74,9 @@ def main():
     try:
         init_db()
         agent = get_customer_support_agent()
-        print("✅ System ready!\n")
+        print("[DONE] System ready!\n")
     except Exception as e:
-        print(f"❌ Initialization failed: {e}")
+        print(f"[FAIL] Initialization failed: {e}")
         return
 
     # Get user ID
@@ -110,7 +110,7 @@ def main():
 
             elif user_input.lower() == "stats":
                 print("\n" + "─" * 80)
-                print(f"📊 Session Statistics")
+                print(f" Session Statistics")
                 print("─" * 80)
                 print(f"User ID: {user_id}")
                 print(f"Queries in this session: {query_count}")
@@ -141,7 +141,7 @@ def main():
             break
 
         except Exception as e:
-            print(f"\n❌ Error: {e}\n")
+            print(f"\n[FAIL] Error: {e}\n")
             continue
 
 

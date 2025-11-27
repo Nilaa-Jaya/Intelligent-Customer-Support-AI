@@ -172,8 +172,8 @@ Add these badges to your README.md:
 ### Enable GitHub Actions:
 1. Go to `Settings > Actions > General`
 2. Under "Workflow permissions", select:
-   - ✅ Read and write permissions
-   - ✅ Allow GitHub Actions to create and approve pull requests
+   - [DONE] Read and write permissions
+   - [DONE] Allow GitHub Actions to create and approve pull requests
 
 ### Enable GitHub Packages:
 1. Go to `Settings > Actions > General`

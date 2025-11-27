@@ -37,116 +37,116 @@ An enterprise-grade, intelligent customer support system powered by LangChain, L
 
 ## Features
 
-### Phase 1: Core AI System ✅
+### Phase 1: Core AI System [DONE]
 
 **Multi-Agent Architecture**
-- 🤖 **7 Specialized AI Agents** - Categorizer, Sentiment Analyzer, Technical, Billing, General, Escalation, KB Retrieval
-- 🔄 **LangGraph Workflow** - Stateful orchestration with conditional routing
-- 🎯 **Intelligent Routing** - Context-aware query categorization (Technical/Billing/Account/General)
+-  **7 Specialized AI Agents** - Categorizer, Sentiment Analyzer, Technical, Billing, General, Escalation, KB Retrieval
+-  **LangGraph Workflow** - Stateful orchestration with conditional routing
+-  **Intelligent Routing** - Context-aware query categorization (Technical/Billing/Account/General)
 - 😊 **Sentiment Analysis** - 4-level emotional tone detection (Positive/Neutral/Negative/Angry)
-- ⚡ **Dynamic Priority Scoring** - 1-10 scale based on sentiment, category, and context
+-  **Dynamic Priority Scoring** - 1-10 scale based on sentiment, category, and context
 - 🚨 **Smart Escalation** - Multi-trigger escalation (priority ≥8, angry sentiment, keywords, attempts ≥3)
 
 **Database & Storage**
 - 💾 **SQLAlchemy ORM** - 6 core tables + 2 webhook tables
 - 🗃️ **PostgreSQL/SQLite Support** - Production PostgreSQL with SSL, SQLite for development
-- 📝 **Conversation Tracking** - Full conversation history with messages, metadata, and analytics
+-  **Conversation Tracking** - Full conversation history with messages, metadata, and analytics
 - 👤 **User Management** - User profiles with VIP support
-- 📊 **Analytics** - Query metrics, sentiment trends, performance tracking
+-  **Analytics** - Query metrics, sentiment trends, performance tracking
 
-### Phase 2: RAG + Web Interface ✅
+### Phase 2: RAG + Web Interface [DONE]
 
 **Knowledge Base (RAG)**
-- 🔍 **FAISS Vector Store** - Semantic similarity search with 90%+ accuracy
-- 📚 **30 Comprehensive FAQs** - Across all support categories
+-  **FAISS Vector Store** - Semantic similarity search with 90%+ accuracy
+-  **30 Comprehensive FAQs** - Across all support categories
 - 🧠 **Sentence Transformers** - all-MiniLM-L6-v2 embeddings
-- 🎯 **Top-K Retrieval** - Relevant FAQ retrieval with similarity scoring
-- ⚡ **Efficient Indexing** - Fast vector search optimized for real-time queries
+-  **Top-K Retrieval** - Relevant FAQ retrieval with similarity scoring
+-  **Efficient Indexing** - Fast vector search optimized for real-time queries
 
 **FastAPI REST API**
-- 🚀 **15+ RESTful Endpoints** - Complete CRUD operations
-- 📝 **Pydantic Validation** - Type-safe request/response schemas
+-  **15+ RESTful Endpoints** - Complete CRUD operations
+-  **Pydantic Validation** - Type-safe request/response schemas
 - 📖 **Auto-Generated Docs** - Swagger UI and ReDoc
-- 🔄 **Async/Await** - High-performance async operations
-- 🌐 **CORS Support** - Cross-origin resource sharing configured
-- ✅ **Health Checks** - Built-in health monitoring endpoint
+-  **Async/Await** - High-performance async operations
+-  **CORS Support** - Cross-origin resource sharing configured
+- [DONE] **Health Checks** - Built-in health monitoring endpoint
 
 **Web Interface**
-- 💬 **ChatGPT-Style UI** - Modern, intuitive chat interface
-- 🎨 **Beautiful Design** - Clean white/blue theme, responsive layout
-- 📱 **Mobile Responsive** - Optimized for all screen sizes
-- 🔄 **Real-Time Updates** - Live query analysis display
-- 📊 **Analytics Display** - Category, sentiment, priority indicators
+-  **ChatGPT-Style UI** - Modern, intuitive chat interface
+-  **Beautiful Design** - Clean white/blue theme, responsive layout
+-  **Mobile Responsive** - Optimized for all screen sizes
+-  **Real-Time Updates** - Live query analysis display
+-  **Analytics Display** - Category, sentiment, priority indicators
 - 📥 **Export Functionality** - Download conversations as JSON
-- ⚡ **Fast Performance** - <1s response time
-- 🎯 **KB Results Display** - Relevant FAQ articles shown with responses
+-  **Fast Performance** - <1s response time
+-  **KB Results Display** - Relevant FAQ articles shown with responses
 
 **Alternative UI**
 - 🎛️ **Gradio Interface** - Quick testing and demonstrations
-- 📊 **KB Visualization** - Browse knowledge base entries
-- 📈 **Real-Time Metrics** - Live performance statistics
+-  **KB Visualization** - Browse knowledge base entries
+-  **Real-Time Metrics** - Live performance statistics
 
-### Phase 3: Production Infrastructure ✅
+### Phase 3: Production Infrastructure [DONE]
 
 **Docker Containerization**
 - 🐳 **Multi-Stage Dockerfile** - Optimized image size (<2GB)
-- 🔧 **docker-compose** - Development and production configurations
-- ✅ **Health Checks** - Container health monitoring
+-  **docker-compose** - Development and production configurations
+- [DONE] **Health Checks** - Container health monitoring
 - 💾 **Volume Mounts** - Persistent data storage
-- 🌐 **Network Isolation** - Secure container networking
+-  **Network Isolation** - Secure container networking
 
 **CI/CD Pipeline**
 - ⚙️ **GitHub Actions** - Automated workflows for test, build, deploy
-- ✅ **Automated Testing** - 38 tests run on every PR/push
-- 🔍 **Code Quality Checks** - flake8 linting, black formatting
-- 🔒 **Security Scanning** - Trivy vulnerability scanning
-- 📦 **Docker Building** - Automatic image building and pushing
-- 🚀 **Automated Deployment** - One-click deploy to Railway
+- [DONE] **Automated Testing** - 38 tests run on every PR/push
+-  **Code Quality Checks** - flake8 linting, black formatting
+-  **Security Scanning** - Trivy vulnerability scanning
+-  **Docker Building** - Automatic image building and pushing
+-  **Automated Deployment** - One-click deploy to Railway
 
 **Railway Deployment**
 - ☁️ **One-Click Deploy** - Complete Railway configuration
 - 🗄️ **PostgreSQL Integration** - Managed database with SSL
 - 🔐 **Environment Variables** - Secure secrets management
-- 🔒 **Automatic HTTPS** - SSL certificates included
+-  **Automatic HTTPS** - SSL certificates included
 - 🌍 **Custom Domains** - Support for custom domain names
-- ⚡ **Zero-Downtime** - Graceful deployments
-- 📊 **Health Monitoring** - Automatic health checks
+-  **Zero-Downtime** - Graceful deployments
+-  **Health Monitoring** - Automatic health checks
 
 **Production Server**
-- 🚀 **Gunicorn WSGI** - Production-grade server
-- ⚡ **Uvicorn Workers** - 4 async workers for high concurrency
-- 🔄 **Connection Pooling** - Optimized database connections
+-  **Gunicorn WSGI** - Production-grade server
+-  **Uvicorn Workers** - 4 async workers for high concurrency
+-  **Connection Pooling** - Optimized database connections
 - 🛡️ **Graceful Shutdown** - Clean process termination
-- 📝 **Request Logging** - Comprehensive access logs
-- ⏱️ **Timeout Handling** - Request timeout configuration
+-  **Request Logging** - Comprehensive access logs
+-  **Timeout Handling** - Request timeout configuration
 
 **Webhook System**
-- 🔔 **7 Management Endpoints** - Complete webhook CRUD operations
+-  **7 Management Endpoints** - Complete webhook CRUD operations
 - 📡 **4 Event Types** - query.created, query.resolved, query.escalated, feedback.received
-- 🔒 **HMAC-SHA256 Security** - Cryptographic signature verification
-- 🔄 **Automatic Retries** - 3 attempts with exponential backoff (1s, 2s, 4s)
-- 📊 **Delivery Logging** - Complete audit trail of all deliveries
-- 📈 **Statistics Tracking** - Success/failure counts per webhook
-- ⚡ **Non-Blocking Execution** - Background delivery, zero API impact
+-  **HMAC-SHA256 Security** - Cryptographic signature verification
+-  **Automatic Retries** - 3 attempts with exponential backoff (1s, 2s, 4s)
+-  **Delivery Logging** - Complete audit trail of all deliveries
+-  **Statistics Tracking** - Success/failure counts per webhook
+-  **Non-Blocking Execution** - Background delivery, zero API impact
 - 🔀 **Parallel Delivery** - Simultaneous delivery to multiple webhooks
-- ✅ **Test Endpoint** - Verify webhook configuration
+- [DONE] **Test Endpoint** - Verify webhook configuration
 
 **Testing & Quality**
-- ✅ **38 Automated Tests** - Comprehensive test suite (16 basic + 22 webhook)
-- 📊 **42% Code Coverage** - Exceeds minimum 25% requirement
+- [DONE] **38 Automated Tests** - Comprehensive test suite (16 basic + 22 webhook)
+-  **42% Code Coverage** - Exceeds minimum 25% requirement
 - 🧪 **Unit Tests** - All components tested
 - 🔗 **Integration Tests** - End-to-end testing
-- 🔄 **Async Test Support** - pytest-asyncio integration
-- 🎭 **Mock Testing** - Isolated component testing
+-  **Async Test Support** - pytest-asyncio integration
+-  **Mock Testing** - Isolated component testing
 - 💯 **100% Pass Rate** - All tests passing
 
 **Security**
 - 🔐 **HMAC Signatures** - Webhook payload verification
-- 🔒 **Environment Variables** - Secure secret management
+-  **Environment Variables** - Secure secret management
 - 🛡️ **SQL Injection Protection** - SQLAlchemy ORM
-- ✅ **Input Validation** - Pydantic schemas
-- 🌐 **CORS Configuration** - Secure cross-origin requests
-- 🔒 **SSL/TLS Support** - Encrypted connections
+- [DONE] **Input Validation** - Pydantic schemas
+-  **CORS Configuration** - Secure cross-origin requests
+-  **SSL/TLS Support** - Encrypted connections
 - 🔑 **Secure Key Generation** - 32-byte URL-safe tokens
 
 ---
@@ -236,7 +236,7 @@ print(f"Response: {response['response']}")
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### High-Level System Architecture
 
@@ -312,7 +312,7 @@ Return Response to User (<1s total)
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -484,19 +484,19 @@ railway up
 - `scripts/railway_init.py` - Database initialization
 
 **Features:**
-- ✅ Automatic PostgreSQL provisioning
-- ✅ SSL/TLS encrypted connections
-- ✅ Automatic HTTPS
-- ✅ Custom domain support
-- ✅ Zero-downtime deployments
-- ✅ Health check monitoring
-- ✅ Auto-scaling
+- [DONE] Automatic PostgreSQL provisioning
+- [DONE] SSL/TLS encrypted connections
+- [DONE] Automatic HTTPS
+- [DONE] Custom domain support
+- [DONE] Zero-downtime deployments
+- [DONE] Health check monitoring
+- [DONE] Auto-scaling
 
 **Deployment time:** ~5 minutes
 
 ---
 
-## 📚 API Documentation
+##  API Documentation
 
 ### Auto-Generated Documentation
 
@@ -589,7 +589,7 @@ curl -X POST http://localhost:8000/api/v1/webhooks \
 }
 ```
 
-**⚠️ Save the `secret_key` - you'll need it to verify webhook signatures!**
+**WARNING: Save the `secret_key` - you'll need it to verify webhook signatures!**
 
 **2. Verify webhook signatures**
 
@@ -627,12 +627,12 @@ def handle_webhook():
 
 ### Features
 
-- 🔒 **HMAC-SHA256 Security** - Cryptographic signatures
-- 🔄 **Automatic Retries** - 3 attempts with exponential backoff
-- 📊 **Delivery Logging** - Complete audit trail
-- ⚡ **Non-Blocking** - Zero impact on API performance
-- ✅ **Test Endpoint** - Verify configuration
-- 📈 **Statistics** - Success/failure tracking
+-  **HMAC-SHA256 Security** - Cryptographic signatures
+-  **Automatic Retries** - 3 attempts with exponential backoff
+-  **Delivery Logging** - Complete audit trail
+-  **Non-Blocking** - Zero impact on API performance
+- [DONE] **Test Endpoint** - Verify configuration
+-  **Statistics** - Success/failure tracking
 
 ### Complete Webhook Guide
 
@@ -675,7 +675,7 @@ tests/test_webhooks.py ......................                           [100%]
 TOTAL                                 1784   1028    42%
 
 Required test coverage of 25% reached. Total coverage: 42.38%
-✓ ALL TESTS PASSING
+[OK] ALL TESTS PASSING
 ```
 
 ### Test Categories
@@ -779,20 +779,20 @@ smartsupport-ai/
 
 ---
 
-## 📊 Performance Metrics
+##  Performance Metrics
 
 ### Current Performance (Production Ready)
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| Average Response Time | <1s | <2s | ✅ Excellent |
-| KB Retrieval Accuracy | 90%+ | >85% | ✅ Excellent |
-| Escalation Rate | 12% | <15% | ✅ Good |
-| Test Coverage | 42.38% | >25% | ✅ Good |
-| API Uptime | 99.9% | >99% | ✅ Excellent |
-| Webhook Delivery | <50ms overhead | Non-blocking | ✅ Excellent |
-| Concurrent Users | 100+ | Scalable | ✅ Good |
-| Database Query Time | <100ms | <200ms | ✅ Excellent |
+| Average Response Time | <1s | <2s | [DONE] Excellent |
+| KB Retrieval Accuracy | 90%+ | >85% | [DONE] Excellent |
+| Escalation Rate | 12% | <15% | [DONE] Good |
+| Test Coverage | 42.38% | >25% | [DONE] Good |
+| API Uptime | 99.9% | >99% | [DONE] Excellent |
+| Webhook Delivery | <50ms overhead | Non-blocking | [DONE] Excellent |
+| Concurrent Users | 100+ | Scalable | [DONE] Good |
+| Database Query Time | <100ms | <200ms | [DONE] Excellent |
 
 ### System Capacity
 
@@ -806,7 +806,7 @@ smartsupport-ai/
 
 ## 🗺️ Roadmap
 
-### Phase 1: Foundation ✅ COMPLETE
+### Phase 1: Foundation [DONE] COMPLETE
 - [x] Project structure and configuration
 - [x] Database models and queries (8 tables)
 - [x] Multi-agent workflow with LangGraph
@@ -816,7 +816,7 @@ smartsupport-ai/
 - [x] Smart escalation logic
 - [x] Conversation persistence
 
-### Phase 2: Advanced Intelligence ✅ COMPLETE
+### Phase 2: Advanced Intelligence [DONE] COMPLETE
 - [x] FAISS vector store integration
 - [x] 30 comprehensive FAQ knowledge base
 - [x] Semantic similarity search (90%+ accuracy)
@@ -828,7 +828,7 @@ smartsupport-ai/
 - [x] Swagger/OpenAPI documentation
 - [x] Export conversation functionality
 
-### Phase 3: Production Infrastructure ✅ COMPLETE
+### Phase 3: Production Infrastructure [DONE] COMPLETE
 - [x] Docker containerization (multi-stage)
 - [x] docker-compose (dev + production)
 - [x] GitHub Actions CI/CD pipeline
@@ -929,7 +929,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📈 Project Stats
+##  Project Stats
 
 ![Code Size](https://img.shields.io/github/languages/code-size/yourusername/smartsupport-ai)
 ![Repo Size](https://img.shields.io/github/repo-size/yourusername/smartsupport-ai)
@@ -946,11 +946,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🌟 Star History
+## * Star History
 
-If you find this project useful, please consider giving it a star! ⭐
+If you find this project useful, please consider giving it a star! *
 
 ---
 
-**Status:** 🚀 Production Ready | **Version:** 2.2.0 | **Updated:** 2025-11-24
+**Status:**  Production Ready | **Version:** 2.2.0 | **Updated:** 2025-11-24
 

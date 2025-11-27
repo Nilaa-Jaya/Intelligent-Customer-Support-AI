@@ -155,8 +155,8 @@ curl -X POST "http://127.0.0.1:8000/api/v1/query" \
 
 | Feature | Gradio | FastAPI |
 |---------|--------|---------|
-| Launch Success | ✗ Framework bug | ✓ Works perfectly |
-| Production Ready | ~ Prototyping tool | ✓ Enterprise-grade |
+| Launch Success | ✗ Framework bug | [OK] Works perfectly |
+| Production Ready | ~ Prototyping tool | [OK] Enterprise-grade |
 | Customization | Limited | Full control |
 | API Documentation | No | Auto-generated |
 | Performance | Good | Excellent |
@@ -204,10 +204,10 @@ LOG_LEVEL=INFO
 
 ## Browser Compatibility
 
-- Chrome/Edge: ✓ Latest 2 versions
-- Firefox: ✓ Latest 2 versions
-- Safari: ✓ Latest 2 versions
-- Mobile: ✓ iOS Safari, Chrome Mobile
+- Chrome/Edge: [OK] Latest 2 versions
+- Firefox: [OK] Latest 2 versions
+- Safari: [OK] Latest 2 versions
+- Mobile: [OK] iOS Safari, Chrome Mobile
 
 ## Keyboard Shortcuts
 

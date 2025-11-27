@@ -96,8 +96,8 @@ def format_sentiment_badge(sentiment: str) -> str:
 def format_escalation_badge(escalated: bool) -> str:
     """Format escalation status as HTML badge"""
     if escalated:
-        return '<span style="background-color: #ef4444; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">⚠️ ESCALATED</span>'
-    return '<span style="background-color: #10b981; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">✓ Resolved</span>'
+        return '<span style="background-color: #ef4444; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">WARNING: ESCALATED</span>'
+    return '<span style="background-color: #10b981; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">[OK] Resolved</span>'
 
 
 def format_kb_results(kb_results: List[Dict[str, Any]]) -> str:
@@ -393,7 +393,7 @@ def create_gradio_interface() -> gr.Blocks:
         # Header
         gr.Markdown(
             """
-            <div class='header-title'>🤖 SmartSupport AI</div>
+            <div class='header-title'> SmartSupport AI</div>
             <div class='header-subtitle'>Intelligent Customer Support Agent - Phase 2.2</div>
             """,
             elem_classes=["header"],
@@ -445,7 +445,7 @@ def create_gradio_interface() -> gr.Blocks:
                 )
 
                 # Real-time information display
-                gr.Markdown("### 📊 Query Analysis")
+                gr.Markdown("###  Query Analysis")
 
                 with gr.Group():
                     category_display = gr.HTML(
@@ -482,7 +482,7 @@ def create_gradio_interface() -> gr.Blocks:
                     )
 
                 # Statistics
-                gr.Markdown("### 📈 Statistics")
+                gr.Markdown("###  Statistics")
                 stats_display = gr.HTML(
                     value="""
                     <div style='font-size: 14px; color: #4b5563;'>
@@ -496,7 +496,7 @@ def create_gradio_interface() -> gr.Blocks:
         # Knowledge Base Results Section
         with gr.Row():
             with gr.Column():
-                gr.Markdown("### 📚 Knowledge Base Results")
+                gr.Markdown("###  Knowledge Base Results")
                 kb_results_display = gr.HTML(
                     value="<p style='color: #6b7280; font-style: italic;'>Knowledge base results will appear here</p>",
                     elem_classes=["kb-section"],

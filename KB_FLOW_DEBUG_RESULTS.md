@@ -2,7 +2,7 @@
 
 ## Summary
 
-**Status:** ✅ KB results ARE flowing through the system correctly
+**Status:** [DONE] KB results ARE flowing through the system correctly
 **Issue:** Display works when tested directly, need to verify in Gradio UI
 
 ---
@@ -12,17 +12,17 @@
 ### Direct Agent Test (`test_kb_flow.py`)
 
 ```
-[MAIN DEBUG] KB results from workflow: 3 items ✅
+[MAIN DEBUG] KB results from workflow: 3 items [DONE]
 [MAIN DEBUG] First KB result: {
     'title': 'Why does my app keep crashing?',
     'content': 'App crashes can be caused by several factors...',
     'category': 'Technical',
     'score': 0.6346208453178406
-} ✅
-[MAIN DEBUG] Passing 3 KB results to metadata ✅
-[MAIN DEBUG] Response metadata contains kb_results: True ✅
+} [DONE]
+[MAIN DEBUG] Passing 3 KB results to metadata [DONE]
+[MAIN DEBUG] Response metadata contains kb_results: True [DONE]
 
-KB Results in response: 3 items ✅
+KB Results in response: 3 items [DONE]
 ```
 
 **Conclusion:** KB retrieval, state management, and metadata passing ALL work correctly!
@@ -31,7 +31,7 @@ KB Results in response: 3 items ✅
 
 ## Data Flow Trace
 
-### ✅ Step 1: KB Retrieval (`src/agents/kb_retrieval.py`)
+### [DONE] Step 1: KB Retrieval (`src/agents/kb_retrieval.py`)
 ```python
 state["kb_results"] = [
     {
@@ -43,11 +43,11 @@ state["kb_results"] = [
     ...
 ]
 ```
-**Status:** Working ✅
+**Status:** Working [DONE]
 
 ---
 
-### ✅ Step 2: Workflow Preserves State
+### [DONE] Step 2: Workflow Preserves State
 LangGraph automatically preserves all state keys through the workflow.
 
 **Log shows:**
@@ -55,11 +55,11 @@ LangGraph automatically preserves all state keys through the workflow.
 [MAIN DEBUG] Result keys: [...'kb_results'...]
 [MAIN DEBUG] KB results from workflow: 3 items
 ```
-**Status:** Working ✅
+**Status:** Working [DONE]
 
 ---
 
-### ✅ Step 3: Main.py Extracts and Passes (`src/main.py`)
+### [DONE] Step 3: Main.py Extracts and Passes (`src/main.py`)
 ```python
 metadata={
     "kb_results": result.get("kb_results", []),
@@ -72,11 +72,11 @@ metadata={
 [MAIN DEBUG] Passing 3 KB results to metadata
 [MAIN DEBUG] Response metadata contains kb_results: True
 ```
-**Status:** Working ✅
+**Status:** Working [DONE]
 
 ---
 
-### ✅ Step 4: Format Function Displays (`src/ui/gradio_app.py`)
+### [DONE] Step 4: Format Function Displays (`src/ui/gradio_app.py`)
 
 **Display function updated to use correct keys:**
 ```python
@@ -85,7 +85,7 @@ title = result.get('title', result.get('question', 'N/A'))
 content = result.get('content', result.get('answer', '...'))
 ```
 
-**Test shows:** Formatting works correctly ✅
+**Test shows:** Formatting works correctly [DONE]
 
 ---
 
@@ -136,7 +136,7 @@ Query: "My app keeps crashing"
 ### 4. Check the UI display
 Should show:
 ```
-📚 Knowledge Base Results
+ Knowledge Base Results
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 ▼ 63.5% - Why does my app keep crashing? [Technical]
@@ -151,7 +151,7 @@ Should show:
 ## Expected Behavior
 
 ### If KB Results Display:
-✅ Everything is working correctly!
+[DONE] Everything is working correctly!
 - Data flows through all layers
 - Display formatting is correct
 - Keys are properly mapped
@@ -206,11 +206,11 @@ Check logs for:
 
 ## Key Findings
 
-1. ✅ **KB Retrieval Works** - Agent successfully retrieves FAQs from knowledge base
-2. ✅ **State Management Works** - LangGraph preserves kb_results through workflow
-3. ✅ **Main.py Extraction Works** - result.get("kb_results") returns correct data
-4. ✅ **Metadata Assembly Works** - kb_results properly added to metadata dict
-5. ✅ **Display Function Works** - format_kb_results() correctly formats HTML
+1. [DONE] **KB Retrieval Works** - Agent successfully retrieves FAQs from knowledge base
+2. [DONE] **State Management Works** - LangGraph preserves kb_results through workflow
+3. [DONE] **Main.py Extraction Works** - result.get("kb_results") returns correct data
+4. [DONE] **Metadata Assembly Works** - kb_results properly added to metadata dict
+5. [DONE] **Display Function Works** - format_kb_results() correctly formats HTML
 
 ---
 
@@ -258,10 +258,10 @@ python run_ui.py
 ## Summary
 
 The system is working correctly end-to-end:
-- ✅ KB retrieval finds relevant FAQs
-- ✅ Workflow preserves kb_results in state
-- ✅ Main.py extracts and passes to metadata
-- ✅ Display function formats correctly
-- ✅ Debug logging added at all critical points
+- [DONE] KB retrieval finds relevant FAQs
+- [DONE] Workflow preserves kb_results in state
+- [DONE] Main.py extracts and passes to metadata
+- [DONE] Display function formats correctly
+- [DONE] Debug logging added at all critical points
 
 The KB results display should now work. If "No KB articles found" still appears, the debug logs will pinpoint the exact issue.

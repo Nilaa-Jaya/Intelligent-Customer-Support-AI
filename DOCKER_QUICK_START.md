@@ -206,11 +206,11 @@ sudo chown -R $USER:$USER data logs
 
 ## Next Steps
 
-1. ✅ Get it running locally
-2. ✅ Test the API at /docs
-3. ✅ Try the web interface
-4. 📚 Read [DOCKER_README.md](DOCKER_README.md) for advanced usage
-5. 🚀 Deploy to cloud (AWS, GCP, Azure)
+1. [DONE] Get it running locally
+2. [DONE] Test the API at /docs
+3. [DONE] Try the web interface
+4.  Read [DOCKER_README.md](DOCKER_README.md) for advanced usage
+5.  Deploy to cloud (AWS, GCP, Azure)
 
 ---
 
@@ -224,4 +224,4 @@ sudo chown -R $USER:$USER data logs
 ---
 
 **Version:** 2.2.0
-**Status:** Production-Ready ✅
+**Status:** Production-Ready [DONE]

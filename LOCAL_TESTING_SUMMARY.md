@@ -1,7 +1,7 @@
 # Local Testing Summary - CI/CD Pipeline Verification
 
 **Date:** 2024-11-24
-**Status:** ⚠️ Issues Found - Requires Attention
+**Status:** WARNING: Issues Found - Requires Attention
 
 ---
 
@@ -13,7 +13,7 @@ All workflow files are valid YAML. However, the codebase has linting issues that
 
 ## Test Results
 
-### ✅ 1. YAML Validation - PASSED
+### [DONE] 1. YAML Validation - PASSED
 
 **Command:** `python validate_yaml.py`
 
@@ -26,11 +26,11 @@ All workflow files are valid YAML. However, the codebase has linting issues that
 [PASS] All YAML files are valid!
 ```
 
-**Status:** ✅ All 3 workflow files are syntactically correct
+**Status:** [DONE] All 3 workflow files are syntactically correct
 
 ---
 
-### ⚠️ 2. Flake8 Linting - ISSUES FOUND
+### WARNING: 2. Flake8 Linting - ISSUES FOUND
 
 **Command:** `flake8 src/ --count --show-source --statistics`
 
@@ -95,7 +95,7 @@ Update `.flake8` to ignore W293 and W291 temporarily, but this is not recommende
 
 ---
 
-### ⚠️ 3. Black Formatting Check - NEEDS FORMATTING
+### WARNING: 3. Black Formatting Check - NEEDS FORMATTING
 
 **Command:** `black --check src/`
 
@@ -105,7 +105,7 @@ Update `.flake8` to ignore W293 and W291 temporarily, but this is not recommende
 1 file would be left unchanged
 ```
 
-**Status:** ⚠️ 29 files need reformatting
+**Status:** WARNING: 29 files need reformatting
 
 #### Files that need reformatting:
 - src/agents/__init__.py
@@ -178,11 +178,11 @@ no tests ran in 0.02s
 
 ---
 
-### ⚠️ 5. Docker Build - SKIPPED
+### WARNING: 5. Docker Build - SKIPPED
 
 **Command:** `docker compose build`
 
-**Status:** ⚠️ Docker not installed on this system
+**Status:** WARNING: Docker not installed on this system
 
 **Notes:**
 - Docker build cannot be verified locally
@@ -198,28 +198,28 @@ no tests ran in 0.02s
 
 #### test.yml workflow:
 ```
-✅ Checkout code                    - Will succeed
-✅ Setup Python 3.10                - Will succeed
-✅ Install dependencies             - Will succeed
-❌ Lint with flake8                 - Will FAIL (233 violations)
-❌ Check formatting with black      - Will FAIL (29 files need formatting)
-⚠️  Run pytest with coverage        - Will PASS but with warning (no tests)
+[DONE] Checkout code                    - Will succeed
+[DONE] Setup Python 3.10                - Will succeed
+[DONE] Install dependencies             - Will succeed
+[FAIL] Lint with flake8                 - Will FAIL (233 violations)
+[FAIL] Check formatting with black      - Will FAIL (29 files need formatting)
+WARNING:  Run pytest with coverage        - Will PASS but with warning (no tests)
 ```
 
 **Result:** PR will be BLOCKED due to linting failures
 
 #### docker-build.yml workflow:
 ```
-✅ Build Docker image               - Should succeed (Dockerfile is valid)
-✅ Push to GHCR                     - Should succeed
-✅ Security scan                    - Should succeed
+[DONE] Build Docker image               - Should succeed (Dockerfile is valid)
+[DONE] Push to GHCR                     - Should succeed
+[DONE] Security scan                    - Should succeed
 ```
 
 **Result:** Docker build should succeed
 
 #### deploy.yml workflow:
 ```
-⚠️  Manual trigger only             - Won't run automatically
+WARNING:  Manual trigger only             - Won't run automatically
 ```
 
 ---
@@ -347,11 +347,11 @@ Update `pytest.ini`:
 
 | Check | Status | Issues | Blocking |
 |-------|--------|--------|----------|
-| YAML Validation | ✅ PASS | 0 | No |
-| Flake8 Linting | ❌ FAIL | 233 | Yes |
-| Black Formatting | ❌ FAIL | 29 files | No* |
-| Pytest | ⚠️ NO TESTS | 0 tests | No* |
-| Docker Build | ⚠️ SKIPPED | N/A | No |
+| YAML Validation | [DONE] PASS | 0 | No |
+| Flake8 Linting | [FAIL] FAIL | 233 | Yes |
+| Black Formatting | [FAIL] FAIL | 29 files | No* |
+| Pytest | WARNING: NO TESTS | 0 tests | No* |
+| Docker Build | WARNING: SKIPPED | N/A | No |
 
 *Currently set to `continue-on-error: true` in workflow
 

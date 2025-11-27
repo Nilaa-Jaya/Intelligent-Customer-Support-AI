@@ -393,14 +393,14 @@ curl https://your-api.com/api/v1/webhooks/{webhook_id}/deliveries
 ### 1. Respond Quickly
 
 ```python
-# ✅ Good: Return 200 immediately, process async
+# [DONE] Good: Return 200 immediately, process async
 @app.post("/webhook")
 async def webhook(request: Request, background_tasks: BackgroundTasks):
     payload = await request.json()
     background_tasks.add_task(process_webhook, payload)
     return {"status": "received"}
 
-# ❌ Bad: Process synchronously
+# [FAIL] Bad: Process synchronously
 @app.post("/webhook")
 async def webhook(request: Request):
     payload = await request.json()
@@ -411,31 +411,31 @@ async def webhook(request: Request):
 ### 2. Always Verify Signatures
 
 ```python
-# ✅ Good: Verify before processing
+# [DONE] Good: Verify before processing
 if not verify_signature(payload, signature, secret_key):
     raise HTTPException(status_code=401)
 process_webhook(payload)
 
-# ❌ Bad: Trust without verification
+# [FAIL] Bad: Trust without verification
 process_webhook(payload)  # Security risk!
 ```
 
 ### 3. Handle Idempotency
 
 ```python
-# ✅ Good: Check for duplicates
+# [DONE] Good: Check for duplicates
 if already_processed(payload["data"]["query_id"]):
     return {"status": "already processed"}
 process_webhook(payload)
 
-# ❌ Bad: Process every delivery
+# [FAIL] Bad: Process every delivery
 process_webhook(payload)  # May process duplicates!
 ```
 
 ### 4. Log Everything
 
 ```python
-# ✅ Good: Comprehensive logging
+# [DONE] Good: Comprehensive logging
 logger.info(f"Webhook received: {payload['event']}")
 logger.info(f"Query ID: {payload['data']['query_id']}")
 logger.info(f"Timestamp: {payload['timestamp']}")
@@ -444,10 +444,10 @@ logger.info(f"Timestamp: {payload['timestamp']}")
 ### 5. Use HTTPS
 
 ```python
-# ✅ Good: Secure endpoint
+# [DONE] Good: Secure endpoint
 url = "https://your-domain.com/webhook"
 
-# ❌ Bad: Insecure endpoint (production)
+# [FAIL] Bad: Insecure endpoint (production)
 url = "http://your-domain.com/webhook"  # Not secure!
 ```
 
@@ -699,4 +699,4 @@ GET /api/v1/webhooks/{webhook_id}/deliveries?skip=0&limit=50
 
 **Last Updated:** 2024-11-24
 **Version:** 1.0.0
-**Status:** ✅ Production Ready
+**Status:** [DONE] Production Ready
