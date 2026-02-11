@@ -1,5 +1,5 @@
 """
-Logging configuration for SmartSupport AI
+Logging configuration for Multi-Agent HR Intelligence Platform
 """
 
 import sys

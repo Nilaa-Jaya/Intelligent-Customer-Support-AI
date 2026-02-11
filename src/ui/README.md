@@ -1,6 +1,6 @@
-# SmartSupport AI - Gradio Web Interface
+# Multi-Agent HR Intelligence Platform - Gradio Web Interface
 
-Professional web interface for the SmartSupport AI customer support agent (Phase 2.2).
+Professional web interface for the Multi-Agent HR Intelligence Platform customer support agent (Phase 2.2).
 
 ## Features
 
@@ -13,10 +13,10 @@ Professional web interface for the SmartSupport AI customer support agent (Phase
 ### 2. Real-Time Analysis Display
 - **Category Badge**: Shows query category (Technical/Billing/Account/General)
 - **Sentiment Badge**: Color-coded sentiment analysis
-  - 🟢 Positive (Green)
-  - 🔵 Neutral (Blue)
-  - 🟠 Negative (Orange)
-  - 🔴 Angry (Red)
+  -  Positive (Green)
+  -  Neutral (Blue)
+  -  Negative (Orange)
+  -  Angry (Red)
 - **Priority Score**: 1-10 scale with visual slider
 - **Processing Time**: Shows response generation time
 - **Escalation Status**: Warning badge when escalated to human agent
@@ -77,7 +77,7 @@ The interface will be available at: http://127.0.0.1:7860
 ### Features
 
 #### Export Conversation
-Click "📥 Export JSON" to save the conversation history to a JSON file. The export includes:
+Click " Export JSON" to save the conversation history to a JSON file. The export includes:
 - All messages
 - Query analysis (category, sentiment, priority)
 - Processing times
@@ -91,7 +91,7 @@ Enter a custom User ID in the "Settings" panel to track queries by user. This en
 - Repeat query tracking
 
 #### Clear Conversation
-Click "🗑️ Clear Conversation" to reset the chat and start fresh. This clears:
+Click " Clear Conversation" to reset the chat and start fresh. This clears:
 - Chat history
 - Statistics
 - Analysis displays
@@ -247,7 +247,7 @@ Planned features for future versions:
 
 ## License
 
-Part of the SmartSupport AI project.
+Part of the Multi-Agent HR Intelligence Platform project.
 
 ## Support
 

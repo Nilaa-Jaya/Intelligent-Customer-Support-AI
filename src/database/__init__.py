@@ -1,5 +1,5 @@
 """
-Database package for SmartSupport AI
+Database package for Multi-Agent HR Intelligence Platform
 """
 
 from src.database.models import (

@@ -1,5 +1,5 @@
 """
-Example usage of SmartSupport AI
+Example usage of Multi-Agent HR Intelligence Platform
 """
 
 import sys
@@ -16,7 +16,7 @@ def main():
     """Main example function"""
 
     print("\n" + "=" * 80)
-    print("Welcome to SmartSupport AI - Customer Support Agent")
+    print("Welcome to Multi-Agent HR Intelligence Platform - Customer Support Agent")
     print("=" * 80 + "\n")
 
     # Initialize database (first time only)

@@ -8,7 +8,7 @@
 
 ## Overview
 
-A comprehensive webhook system has been implemented for SmartSupport AI, enabling real-time event notifications to third-party integrations. The system includes HMAC-SHA256 signature verification, automatic retries with exponential backoff, and complete CRUD operations.
+A comprehensive webhook system has been implemented for Multi-Agent HR Intelligence Platform, enabling real-time event notifications to third-party integrations. The system includes HMAC-SHA256 signature verification, automatic retries with exponential backoff, and complete CRUD operations.
 
 ---
 
@@ -253,7 +253,7 @@ A comprehensive webhook system has been implemented for SmartSupport AI, enablin
 - `X-Webhook-Signature` - HMAC-SHA256 signature
 - `X-Webhook-Timestamp` - UTC timestamp
 - `X-Webhook-ID` - Webhook UUID
-- `User-Agent` - SmartSupport-Webhook/1.0
+- `User-Agent` - Multi-Agent HR Intelligence Platform-Webhook/1.0
 - `Content-Type` - application/json
 
 **Security benefits:**
@@ -311,7 +311,7 @@ Attempt 3: T+3s
 ```
 1. User submits query
    ↓
-2. SmartSupport processes query
+2. Multi-Agent HR Intelligence Platform processes query
    ↓
 3. Query saved to database
    ↓

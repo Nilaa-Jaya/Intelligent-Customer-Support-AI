@@ -1,8 +1,8 @@
-# SmartSupport AI - Docker Deployment Guide
+# Multi-Agent HR Intelligence Platform - Docker Deployment Guide
 
 ## Overview
 
-This guide covers deploying SmartSupport AI using Docker and Docker Compose for both development and production environments.
+This guide covers deploying Multi-Agent HR Intelligence Platform using Docker and Docker Compose for both development and production environments.
 
 ## Prerequisites
 

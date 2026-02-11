@@ -1,5 +1,5 @@
 """
-FastAPI application for SmartSupport AI
+FastAPI application for Multi-Agent HR Intelligence Platform
 Production-ready web interface
 """
 
@@ -18,7 +18,7 @@ from src.utils import app_logger
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="SmartSupport AI",
+    title="Multi-Agent HR Intelligence Platform",
     description="Intelligent Customer Support Agent with KB Integration",
     version="2.2.0",
     docs_url="/docs",
@@ -53,7 +53,7 @@ app.include_router(webhooks_router, tags=["Webhooks"])
 @app.on_event("startup")
 async def startup_event():
     """Initialize on startup"""
-    app_logger.info("Starting SmartSupport AI FastAPI application...")
+    app_logger.info("Starting Multi-Agent HR Intelligence Platform FastAPI application...")
 
     try:
         # Initialize database
@@ -67,7 +67,7 @@ async def startup_event():
 async def root(request: Request):
     """Serve the main UI"""
     return templates.TemplateResponse(
-        "index.html", {"request": request, "title": "SmartSupport AI"}
+        "index.html", {"request": request, "title": "Multi-Agent HR Intelligence Platform"}
     )
 
 

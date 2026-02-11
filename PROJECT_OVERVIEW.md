@@ -1,4 +1,4 @@
-#  SmartSupport AI - Complete Project Overview
+#  Multi-Agent HR Intelligence Platform - Complete Project Overview
 
 ## Project Statistics
 
@@ -170,7 +170,7 @@ Database Storage & Analytics
 
 ### Project Description
 ```
-SmartSupport AI - Enterprise Customer Support System
+Multi-Agent HR Intelligence Platform - Enterprise Customer Support System
 
 Built an intelligent, multi-agent customer support system using LangChain, 
 LangGraph, and Llama 3.3-70B. Implemented query categorization, sentiment 

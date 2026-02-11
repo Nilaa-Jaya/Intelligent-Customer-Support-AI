@@ -35,7 +35,7 @@ The Knowledge Base Results section was showing "0.0% - N/A" instead of actual FA
 - `result.get('question', 'N/A')` → Always returned `'N/A'` (default value)
 - `result.get('answer', 'No answer available')` → Always returned default
 
-So the display showed: **"0.0% - N/A"** 🚫
+So the display showed: **"0.0% - N/A"** 
 
 ---
 
@@ -164,9 +164,9 @@ Knowledge Base Results
 ```
 
 ### Color Coding:
-- 🟢 **Green** (≥80%): High confidence match
-- 🟠 **Orange** (60-79%): Medium confidence match
-- 🔴 **Red** (<60%): Lower confidence match
+-  **Green** (≥80%): High confidence match
+-  **Orange** (60-79%): Medium confidence match
+-  **Red** (<60%): Lower confidence match
 
 ---
 

@@ -1,5 +1,5 @@
 """
-Test script for SmartSupport AI
+Test script for Multi-Agent HR Intelligence Platform
 Run this to verify your installation and test the system
 """
 
@@ -18,7 +18,7 @@ def test_basic_queries():
     """Test basic query processing"""
 
     print("\n" + "=" * 80)
-    print("SmartSupport AI - Test Suite")
+    print("Multi-Agent HR Intelligence Platform - Test Suite")
     print("=" * 80 + "\n")
 
     # Initialize database
@@ -101,7 +101,7 @@ def test_basic_queries():
                     )
                 else:
                     print(
-                        f"   ⚠ Category mismatch - Expected: {test_case['expected_category']}, Got: {response['category']}"
+                        f"   [WARNING] Category mismatch - Expected: {test_case['expected_category']}, Got: {response['category']}"
                     )
 
             # Check escalation for angry query
@@ -109,7 +109,7 @@ def test_basic_queries():
                 if response["metadata"].get("escalated"):
                     print(f"   [OK] Correctly escalated angry customer")
                 else:
-                    print(f"   ⚠ Should have escalated but didn't")
+                    print(f"   [WARNING] Should have escalated but didn't")
 
         except Exception as e:
             print(f"[FAIL] Error processing query: {e}")

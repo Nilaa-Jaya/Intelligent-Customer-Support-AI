@@ -1,5 +1,5 @@
 """
-Agent modules for SmartSupport AI
+Agent modules for Multi-Agent HR Intelligence Platform
 """
 
 from src.agents.state import AgentState, ConversationContext

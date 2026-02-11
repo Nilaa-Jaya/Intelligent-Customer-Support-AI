@@ -30,12 +30,12 @@ from src.database import init_db  # [DONE] CORRECT
 
 **Problem:**
 ```python
-print(" SmartSupport AI")  # [FAIL] Causes UnicodeEncodeError on Windows
+print(" Multi-Agent HR Intelligence Platform")  # [FAIL] Causes UnicodeEncodeError on Windows
 ```
 
 **Solution:**
 ```python
-print("SmartSupport AI")  # [DONE] ASCII-safe
+print("Multi-Agent HR Intelligence Platform")  # [DONE] ASCII-safe
 ```
 
 **Why it happened:** Windows console (cp1252 encoding) can't display Unicode emojis

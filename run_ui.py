@@ -1,5 +1,5 @@
 """
-SmartSupport AI - Gradio UI Launcher
+Multi-Agent HR Intelligence Platform - Gradio UI Launcher
 
 Simple script to launch the Gradio web interface.
 """
@@ -13,7 +13,7 @@ project_root = Path(__file__).parent
 sys.path.insert(0, str(project_root))
 
 print("\n" + "=" * 70)
-print("SmartSupport AI - Customer Support Agent")
+print("Multi-Agent HR Intelligence Platform - Customer Support Agent")
 print("=" * 70)
 print("\nPhase 2.2 - Professional Gradio Web Interface\n")
 
@@ -22,7 +22,7 @@ print("[1/4] Initializing logging system...")
 try:
     from src.utils import app_logger
 
-    app_logger.info("Starting SmartSupport AI Web Interface...")
+    app_logger.info("Starting Multi-Agent HR Intelligence Platform Web Interface...")
     print("      [OK] Logger initialized")
 except Exception as e:
     print(f"      [WARN] Logger failed: {e}")

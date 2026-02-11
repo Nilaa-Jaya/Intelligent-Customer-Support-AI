@@ -1,6 +1,6 @@
 # GitHub Actions Workflows
 
-This directory contains the CI/CD workflows for SmartSupport AI. Each workflow is designed to automate different aspects of the development and deployment process.
+This directory contains the CI/CD workflows for Multi-Agent HR Intelligence Platform. Each workflow is designed to automate different aspects of the development and deployment process.
 
 ## Workflows Overview
 

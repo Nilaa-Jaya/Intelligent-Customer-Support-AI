@@ -204,17 +204,17 @@ KB Results:
 
 ### High Confidence (≥80%)
 ```
-🟢 85.2% - How to reset password [Account]
+ 85.2% - How to reset password [Account]
 ```
 
 ### Medium Confidence (60-79%)
 ```
-🟠 74.5% - Why does my app keep crashing? [Technical]
+ 74.5% - Why does my app keep crashing? [Technical]
 ```
 
 ### Lower Confidence (<60%)
 ```
-🔴 45.3% - Subscription cancellation [Billing]
+ 45.3% - Subscription cancellation [Billing]
 ```
 
 ---

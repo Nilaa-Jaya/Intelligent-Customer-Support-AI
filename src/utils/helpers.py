@@ -144,19 +144,21 @@ def format_response(
 
 
 def parse_llm_category(raw_category: str) -> str:
-    """Parse and standardize category from LLM response"""
-    category_lower = raw_category.lower()
+    """Parse and standardize category from LLM response - HR Domain"""
+    category_lower = raw_category.lower().strip()
 
-    if "technical" in category_lower or "tech" in category_lower:
-        return "Technical"
-    elif (
-        "billing" in category_lower
-        or "payment" in category_lower
-        or "invoice" in category_lower
-    ):
-        return "Billing"
-    elif "account" in category_lower:
-        return "Account"
+    if "recruit" in category_lower or "hiring" in category_lower or "job" in category_lower or "interview" in category_lower:
+        return "Recruitment"
+    elif "payroll" in category_lower or "salary" in category_lower or "pay" in category_lower or "w-2" in category_lower or "w2" in category_lower:
+        return "Payroll"
+    elif "benefit" in category_lower or "insurance" in category_lower or "401k" in category_lower or "retirement" in category_lower:
+        return "Benefits"
+    elif "policy" in category_lower or "handbook" in category_lower or "code of conduct" in category_lower or "dress code" in category_lower:
+        return "Policy"
+    elif "leave" in category_lower or "vacation" in category_lower or "pto" in category_lower or "sick" in category_lower or "fmla" in category_lower:
+        return "LeaveManagement"
+    elif "performance" in category_lower or "review" in category_lower or "promotion" in category_lower or "goal" in category_lower:
+        return "Performance"
     elif "general" in category_lower:
         return "General"
     else:

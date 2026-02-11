@@ -1,4 +1,4 @@
-#  SmartSupport AI - Complete Checklist
+#  Multi-Agent HR Intelligence Platform - Complete Checklist
 
 ## [COMPLETED] Phase 1: Foundation - COMPLETE!
 
@@ -130,7 +130,7 @@ sentiment analysis, and smart escalation using LangChain & LangGraph
 
 ### Example Resume Entry
 ```
-SmartSupport AI - Customer Support System | [GitHub Link]
+Multi-Agent HR Intelligence Platform - Customer Support System | [GitHub Link]
 • Designed and implemented multi-agent AI system using LangChain and LangGraph 
   with 7 specialized agents for technical, billing, and account support
 • Built intelligent query routing with 4-level sentiment analysis achieving 

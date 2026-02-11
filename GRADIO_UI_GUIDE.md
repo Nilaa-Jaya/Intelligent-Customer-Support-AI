@@ -1,4 +1,4 @@
-# SmartSupport AI - Gradio Web Interface Guide
+# Multi-Agent HR Intelligence Platform - Gradio Web Interface Guide
 
 ## Overview
 
@@ -35,16 +35,16 @@ python initialize_kb.py
 
 #### Category Badge
 Shows query category with color-coded badges:
-- 🟣 **Technical** (Purple)
-- 🟠 **Billing** (Orange)
-- 🔵 **Account** (Blue)
-- ⚪ **General** (Gray)
+-  **Technical** (Purple)
+-  **Billing** (Orange)
+-  **Account** (Blue)
+-  **General** (Gray)
 
 #### Sentiment Badge (Color-Coded)
-- 🟢 **Positive** (Green #10b981)
-- 🔵 **Neutral** (Blue #3b82f6)
-- 🟠 **Negative** (Orange #f59e0b)
-- 🔴 **Angry** (Red #ef4444)
+-  **Positive** (Green #10b981)
+-  **Neutral** (Blue #3b82f6)
+-  **Negative** (Orange #f59e0b)
+-  **Angry** (Red #ef4444)
 
 #### Priority Score
 - **Display**: Shows score as "X/10"
@@ -65,9 +65,9 @@ Shows query category with color-coded badges:
 #### FAQ Display
 - **Expandable Cards**: Click to view full FAQ content
 - **Similarity Scores**: Color-coded confidence levels
-  - 🟢 Green: ≥80% match (High confidence)
-  - 🟠 Orange: 60-79% match (Medium confidence)
-  - 🔴 Red: <60% match (Low confidence)
+  -  Green: ≥80% match (High confidence)
+  -  Orange: 60-79% match (Medium confidence)
+  -  Red: <60% match (Low confidence)
 - **Categories**: Each FAQ shows its category
 - **Titles**: Truncated for readability, full text in expansion
 
@@ -83,8 +83,8 @@ Shows query category with color-coded badges:
 
 #### System Status
 - **Real-time Indicator**:
-  - 🟢 **Online**: System ready
-  - 🔴 **Offline**: Initialization error
+  -  **Online**: System ready
+  -  **Offline**: Initialization error
 - **Auto-initialization**: Database and agent load on startup
 
 #### Statistics Display
@@ -178,7 +178,7 @@ GRADIO_UI_GUIDE.md       # This file
 ### Export Conversation
 
 1. Have a conversation (multiple messages)
-2. Click "📥 Export JSON"
+2. Click " Export JSON"
 3. Check status message
 4. File saved: `conversation_export_*.json`
 

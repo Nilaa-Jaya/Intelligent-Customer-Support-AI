@@ -1,6 +1,6 @@
 # CI/CD Pipeline Setup Guide
 
-Complete guide for setting up the Continuous Integration and Continuous Deployment pipeline for SmartSupport AI.
+Complete guide for setting up the Continuous Integration and Continuous Deployment pipeline for Multi-Agent HR Intelligence Platform.
 
 ## Overview
 
@@ -332,7 +332,7 @@ gh run view <run-id>
 Add to README.md:
 
 ```markdown
-# SmartSupport AI
+# Multi-Agent HR Intelligence Platform
 
 ![Tests](https://github.com/YOUR_USERNAME/smartsupport-ai/actions/workflows/test.yml/badge.svg)
 ![Docker](https://github.com/YOUR_USERNAME/smartsupport-ai/actions/workflows/docker-build.yml/badge.svg)

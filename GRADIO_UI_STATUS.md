@@ -59,9 +59,9 @@ def get_type(schema):
 **Root Cause:** When Gradio's type introspection system processes the interface outputs, it encounters a schema value that is a boolean instead of the expected dictionary. This causes the `in` operator to fail.
 
 ### Versions Affected
-- Gradio 5.8.0 ✗
-- Gradio 5.9.1 ✗
-- Gradio 5.10.0 ✗
+- Gradio 5.8.0 [X]
+- Gradio 5.9.1 [X]
+- Gradio 5.10.0 [X]
 
 ### Approaches Tried
 1. Removed complex type annotations from functions

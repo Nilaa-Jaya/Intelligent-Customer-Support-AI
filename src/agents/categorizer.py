@@ -10,21 +10,25 @@ from src.utils.helpers import parse_llm_category
 from src.utils.logger import app_logger
 
 
-# Categorization prompt
+# Categorization prompt - HR Domain
 CATEGORIZATION_PROMPT = ChatPromptTemplate.from_template(
-    """You are an expert customer support query classifier.
+    """You are an expert HR query classifier for employee support.
 
-Categorize the following customer query into ONE of these categories:
-- Technical: Issues with software, hardware, service functionality, bugs, errors, setup, configuration
-- Billing: Payment issues, invoices, refunds, subscriptions, pricing, charges
-- Account: Login, password, profile, account settings, registration, security
-- General: Company policies, general inquiries, feedback, suggestions
+Categorize the following employee query into ONE of these categories:
+
+- Recruitment: Job applications, internal positions, hiring process, interviews, candidate screening, referrals, onboarding, offer letters, visa sponsorship
+- Payroll: Salary, paychecks, pay schedule, direct deposit, tax withholdings, W-2 forms, pay slips, overtime, compensation, payment errors
+- Benefits: Health insurance, 401(k), retirement plans, PTO accrual, parental leave, wellness programs, employee perks, benefit enrollment, life insurance, disability
+- Policy: Company policies, employee handbook, remote work policy, dress code, code of conduct, expense reports, outside employment, workplace guidelines
+- LeaveManagement: Vacation requests, PTO, sick leave, FMLA, bereavement leave, jury duty, military leave, sabbatical, leave of absence, time-off balance
+- Performance: Performance reviews, annual goals, promotions, feedback, professional development, PIPs, career growth, mentorship, training
+- General: General HR inquiries, employee portal access, HR contacts, onboarding process, company information, miscellaneous HR questions
 
 Query: {query}
 
 {context}
 
-Respond with ONLY the category name (Technical, Billing, Account, or General).
+Respond with ONLY the category name (Recruitment, Payroll, Benefits, Policy, LeaveManagement, Performance, or General).
 Category:"""
 )
 

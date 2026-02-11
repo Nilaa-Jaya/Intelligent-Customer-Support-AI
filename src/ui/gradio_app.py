@@ -1,5 +1,5 @@
 """
-Professional Gradio Web Interface for SmartSupport AI - Phase 2.2
+Professional Gradio Web Interface for Multi-Agent HR Intelligence Platform - Phase 2.2
 
 A beautiful, production-ready chat interface showcasing all AI capabilities.
 """
@@ -54,7 +54,7 @@ def initialize_system():
     """Initialize database and agent on startup"""
     global agent
     try:
-        app_logger.info("Initializing SmartSupport AI system...")
+        app_logger.info("Initializing Multi-Agent HR Intelligence Platform system...")
         init_db()
         agent = get_customer_support_agent()
         app_logger.info("System initialized successfully!")
@@ -76,11 +76,14 @@ def get_sentiment_color(sentiment: str) -> str:
 
 
 def format_category_badge(category: str) -> str:
-    """Format category as HTML badge"""
+    """Format HR category as HTML badge"""
     color_map = {
-        "Technical": "#8b5cf6",  # Purple
-        "Billing": "#f59e0b",  # Orange
-        "Account": "#3b82f6",  # Blue
+        "Recruitment": "#10b981",  # Green
+        "Payroll": "#f59e0b",  # Orange
+        "Benefits": "#3b82f6",  # Blue
+        "Policy": "#6366f1",  # Indigo
+        "LeaveManagement": "#8b5cf6",  # Purple
+        "Performance": "#ec4899",  # Pink
         "General": "#6b7280",  # Gray
     }
     color = color_map.get(category, "#6b7280")
@@ -387,14 +390,14 @@ def create_gradio_interface() -> gr.Blocks:
             primary_hue="indigo", secondary_hue="purple", neutral_hue="slate"
         ),
         css=custom_css,
-        title="SmartSupport AI - Customer Support Agent",
+        title="Multi-Agent HR Intelligence Platform - Employee Support Agent",
     ) as interface:
 
         # Header
         gr.Markdown(
             """
-            <div class='header-title'> SmartSupport AI</div>
-            <div class='header-subtitle'>Intelligent Customer Support Agent - Phase 2.2</div>
+            <div class='header-title'>Multi-Agent HR Intelligence Platform</div>
+            <div class='header-subtitle'>Intelligent HR Support Assistant - Your HR Questions Answered</div>
             """,
             elem_classes=["header"],
         )
@@ -417,7 +420,7 @@ def create_gradio_interface() -> gr.Blocks:
 
                 with gr.Row():
                     msg_input = gr.Textbox(
-                        placeholder="Type your question here...",
+                        placeholder="Ask your HR question... (e.g., 'When is payday?', 'How do I request vacation?')",
                         show_label=False,
                         scale=4,
                         container=False,
@@ -425,8 +428,8 @@ def create_gradio_interface() -> gr.Blocks:
                     send_btn = gr.Button("Send", variant="primary", scale=1)
 
                 with gr.Row():
-                    clear_btn = gr.Button("🗑️ Clear Conversation", variant="secondary")
-                    export_btn = gr.Button("📥 Export JSON", variant="secondary")
+                    clear_btn = gr.Button("Clear Conversation", variant="secondary")
+                    export_btn = gr.Button("Export JSON", variant="secondary")
 
                 export_status = gr.Textbox(
                     label="Export Status", interactive=False, visible=False
@@ -435,7 +438,7 @@ def create_gradio_interface() -> gr.Blocks:
             # Right column - Information panels
             with gr.Column(scale=1):
                 # User settings
-                gr.Markdown("### ⚙️ Settings")
+                gr.Markdown("### Settings")
                 user_id_input = gr.Textbox(
                     label="User ID", value="anonymous", placeholder="Enter your user ID"
                 )
@@ -507,7 +510,7 @@ def create_gradio_interface() -> gr.Blocks:
             """
             ---
             <div style='text-align: center; color: #6b7280; font-size: 12px;'>
-                SmartSupport AI v2.2 | Powered by LangGraph & Claude |
+                Multi-Agent HR Intelligence Platform v2.2 | Powered by LangGraph & Claude |
                 <a href='https://github.com' style='color: #8b5cf6;'>Documentation</a>
             </div>
             """
@@ -590,7 +593,7 @@ def launch_app(
         server_port: Server port number
         share: Whether to create a public share link
     """
-    app_logger.info("Launching SmartSupport AI Gradio interface...")
+    app_logger.info("Launching Multi-Agent HR Intelligence Platform Gradio interface...")
 
     interface = create_gradio_interface()
 

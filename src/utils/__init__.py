@@ -1,5 +1,5 @@
 """
-Utility modules for SmartSupport AI
+Utility modules for Multi-Agent HR Intelligence Platform
 """
 
 from src.utils.config import settings, get_settings

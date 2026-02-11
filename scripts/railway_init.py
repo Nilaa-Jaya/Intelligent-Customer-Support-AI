@@ -211,7 +211,7 @@ def main():
     app_logger.info("=" * 60)
 
     for step_name, success in steps:
-        status = "[OK] PASS" if success else "✗ FAIL"
+        status = "[OK] PASS" if success else "[X] FAIL"
         app_logger.info(f"{status}: {step_name}")
 
     # Determine overall success

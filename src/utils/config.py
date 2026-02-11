@@ -1,5 +1,5 @@
 """
-Configuration management for SmartSupport AI
+Configuration management for Multi-Agent HR Intelligence Platform
 """
 
 import os
@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379/0"
 
     # Application
-    app_name: str = "SmartSupport AI"
+    app_name: str = "Multi-Agent HR Intelligence Platform"
     app_version: str = "1.0.0"
     debug: bool = os.getenv("ENVIRONMENT", "development") != "production"
     environment: str = os.getenv("ENVIRONMENT", "development")

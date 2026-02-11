@@ -29,7 +29,7 @@ All code quality checks are now passing! The codebase is ready to be pushed to G
 
 **Result:**
 ```
-All done!  🍰 
+All done!   
 30 files would be left unchanged.
 ```
 

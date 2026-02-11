@@ -1,5 +1,5 @@
 """
-Simple launcher for SmartSupport AI Gradio UI
+Simple launcher for Multi-Agent HR Intelligence Platform Gradio UI
 This uses a simplified version to avoid Gradio type checking bugs
 """
 
@@ -11,7 +11,7 @@ project_root = Path(__file__).parent
 sys.path.insert(0, str(project_root))
 
 print("=" * 70)
-print("SmartSupport AI - Customer Support Agent (Simplified UI)")
+print("Multi-Agent HR Intelligence Platform - Customer Support Agent (Simplified UI)")
 print("=" * 70)
 print()
 
@@ -19,7 +19,7 @@ print("[1/3] Initializing logging...")
 try:
     from src.utils import app_logger
 
-    app_logger.info("Starting SmartSupport AI Web Interface...")
+    app_logger.info("Starting Multi-Agent HR Intelligence Platform Web Interface...")
     print("      [OK] Logger initialized")
 except Exception as e:
     print(f"      [WARN] Logger failed: {e}")

@@ -1,5 +1,5 @@
 """
-Launch SmartSupport AI - FastAPI Web Interface
+Launch Multi-Agent HR Intelligence Platform - FastAPI Web Interface
 Production-ready alternative to Gradio
 """
 
@@ -11,7 +11,7 @@ project_root = Path(__file__).parent
 sys.path.insert(0, str(project_root))
 
 print("=" * 70)
-print("SmartSupport AI - FastAPI Web Interface")
+print("Multi-Agent HR Intelligence Platform - FastAPI Web Interface")
 print("=" * 70)
 print()
 print("Version: 2.2.0")
@@ -22,7 +22,7 @@ print("[1/3] Initializing logging...")
 try:
     from src.utils import app_logger
 
-    app_logger.info("Starting SmartSupport AI FastAPI application...")
+    app_logger.info("Starting Multi-Agent HR Intelligence Platform FastAPI application...")
     print("      [OK] Logger initialized")
 except Exception as e:
     print(f"      [WARN] Logger failed: {e}")

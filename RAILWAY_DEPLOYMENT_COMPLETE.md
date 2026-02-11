@@ -8,7 +8,7 @@
 
 ## Overview
 
-All Railway deployment files have been created and configured. SmartSupport AI is now ready to deploy to Railway with PostgreSQL.
+All Railway deployment files have been created and configured. Multi-Agent HR Intelligence Platform is now ready to deploy to Railway with PostgreSQL.
 
 ---
 

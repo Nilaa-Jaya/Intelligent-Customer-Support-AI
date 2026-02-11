@@ -1,1 +1,1 @@
-"""Test suite for SmartSupport AI"""
+"""Test suite for Multi-Agent HR Intelligence Platform"""

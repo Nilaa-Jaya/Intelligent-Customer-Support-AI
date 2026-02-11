@@ -1,5 +1,5 @@
 """
-Simplified Gradio UI for SmartSupport AI
+Simplified Gradio UI for Multi-Agent HR Intelligence Platform
 This version uses fewer outputs to avoid Gradio type checking bugs
 """
 
@@ -157,11 +157,11 @@ def process_message(message: str, history: List[Tuple[str, str]]):
 def create_simple_interface():
     """Create simplified Gradio interface"""
 
-    with gr.Blocks(title="SmartSupport AI", theme=gr.themes.Soft()) as interface:
+    with gr.Blocks(title="Multi-Agent HR Intelligence Platform", theme=gr.themes.Soft()) as interface:
 
         gr.Markdown(
             """
-            # SmartSupport AI - Customer Support Agent
+            # Multi-Agent HR Intelligence Platform - Customer Support Agent
 
             Ask any question and get intelligent responses with knowledge base integration.
             """
@@ -201,7 +201,7 @@ def create_simple_interface():
             """
             ---
             <div style='text-align: center; color: #6b7280; font-size: 12px;'>
-                SmartSupport AI v2.2 | Powered by LangGraph & Claude
+                Multi-Agent HR Intelligence Platform v2.2 | Powered by LangGraph & Claude
             </div>
             """
         )
@@ -248,7 +248,7 @@ def launch_simple_app(share=False, server_port=7860):
     # Create and launch interface
     interface = create_simple_interface()
 
-    app_logger.info("Launching simplified SmartSupport AI Gradio interface...")
+    app_logger.info("Launching simplified Multi-Agent HR Intelligence Platform Gradio interface...")
 
     interface.launch(
         server_name="127.0.0.1", server_port=server_port, share=share, show_error=True

@@ -1,4 +1,4 @@
-#  Quick Start Guide - SmartSupport AI
+#  Quick Start Guide - Multi-Agent HR Intelligence Platform
 
 ##  Get Started in 5 Minutes
 
