@@ -235,4 +235,4 @@ Once the server is running:
    - Knowledge base results
    - Processing time
 
-Enjoy your SmartSupport AI interface! 
+Enjoy your Multi-Agent HR Intelligence Platform interface! 

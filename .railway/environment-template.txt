@@ -53,7 +53,7 @@ OPENAI_API_KEY=optional_openai_api_key
 # ===========================================================
 
 # Application Name
-APP_NAME=SmartSupport AI
+APP_NAME=Multi-Agent HR Intelligence Platform
 
 # Application Version
 APP_VERSION=1.0.0

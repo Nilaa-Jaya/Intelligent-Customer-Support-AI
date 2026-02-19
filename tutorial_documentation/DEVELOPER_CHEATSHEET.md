@@ -1,4 +1,4 @@
-# SmartSupport AI - Developer's Cheat Sheet
+# Multi-Agent HR Intelligence Platform - Developer's Cheat Sheet
 
 ## Adding a New Agent
 
@@ -680,4 +680,4 @@ def test_[test_name](agent):
 
 ---
 
-*Last Updated: January 2026 | SmartSupport AI v2.2.0*
+*Last Updated: January 2026 | Multi-Agent HR Intelligence Platform v2.2.0*

@@ -1,4 +1,4 @@
-# SmartSupport AI - FastAPI Web Interface
+# Multi-Agent HR Intelligence Platform - FastAPI Web Interface
 
 ## Overview
 
@@ -155,7 +155,7 @@ curl -X POST "http://127.0.0.1:8000/api/v1/query" \
 
 | Feature | Gradio | FastAPI |
 |---------|--------|---------|
-| Launch Success | ✗ Framework bug | [OK] Works perfectly |
+| Launch Success | [X] Framework bug | [OK] Works perfectly |
 | Production Ready | ~ Prototyping tool | [OK] Enterprise-grade |
 | Customization | Limited | Full control |
 | API Documentation | No | Auto-generated |

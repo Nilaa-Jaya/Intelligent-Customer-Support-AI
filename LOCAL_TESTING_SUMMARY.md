@@ -148,7 +148,7 @@ black src/
 
 ---
 
-### ℹ️ 4. Pytest - NO TESTS FOUND
+### ℹ 4. Pytest - NO TESTS FOUND
 
 **Command:** `pytest -v`
 
@@ -158,7 +158,7 @@ collected 0 items
 no tests ran in 0.02s
 ```
 
-**Status:** ℹ️ No test files found (expected at this stage)
+**Status:** ℹ No test files found (expected at this stage)
 
 **Notes:**
 - pytest is configured correctly via pytest.ini

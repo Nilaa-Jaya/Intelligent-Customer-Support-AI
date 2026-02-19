@@ -1,6 +1,6 @@
 # Railway Deployment Checklist
 
-Complete this checklist step-by-step to successfully deploy SmartSupport AI to Railway.
+Complete this checklist step-by-step to successfully deploy Multi-Agent HR Intelligence Platform to Railway.
 
 ## Pre-Deployment (Local Setup)
 

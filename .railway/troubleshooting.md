@@ -1,6 +1,6 @@
 # Railway Deployment Troubleshooting Guide
 
-Common issues and solutions for Railway deployment of SmartSupport AI.
+Common issues and solutions for Railway deployment of Multi-Agent HR Intelligence Platform.
 
 ---
 

@@ -1,5 +1,5 @@
 """
-State management for SmartSupport AI agent workflow
+State management for Multi-Agent HR Intelligence Platform agent workflow
 """
 
 from typing import TypedDict, Optional, List, Dict, Any

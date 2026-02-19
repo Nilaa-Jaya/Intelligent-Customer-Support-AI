@@ -1,5 +1,5 @@
 """
-Generate COMPREHENSIVE Word document tutorial for SmartSupport AI
+Generate COMPREHENSIVE Word document tutorial for Multi-Agent HR Intelligence Platform
 Target: 75+ pages with detailed explanations
 """
 
@@ -113,7 +113,7 @@ def create_title_page(doc):
     for _ in range(3):
         doc.add_paragraph()
 
-    title = doc.add_heading('SmartSupport AI', 0)
+    title = doc.add_heading('Multi-Agent HR Intelligence Platform', 0)
     title.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
     # Subtitle
@@ -729,7 +729,7 @@ def handle_query(query):
     )
 
     add_note(doc,
-        "SmartSupport AI uses Model-Based Agents - each agent considers the conversation "
+        "Multi-Agent HR Intelligence Platform uses Model-Based Agents - each agent considers the conversation "
         "context and previous agent outputs when making decisions."
     )
 
@@ -855,7 +855,7 @@ if __name__ == "__main__":
 
     add_key_insight(doc,
         "This simple agent demonstrates the core pattern: prompt template + LLM + output parsing. "
-        "Every agent in SmartSupport AI follows this same pattern, just with more sophisticated "
+        "Every agent in Multi-Agent HR Intelligence Platform follows this same pattern, just with more sophisticated "
         "prompts and additional context."
     )
 
@@ -920,7 +920,7 @@ def create_chapter_2(doc):
     create_table(doc, headers, rows)
 
     add_note(doc,
-        "SmartSupport AI uses Llama 3.3-70B via Groq's API. We get the benefits of a "
+        "Multi-Agent HR Intelligence Platform uses Llama 3.3-70B via Groq's API. We get the benefits of a "
         "state-of-the-art model without the cost of training or hosting it ourselves."
     )
 
@@ -1054,7 +1054,7 @@ temperature=1.5 (creative):
         "generation and controls costs (you pay per token with most APIs)."
     )
 
-    add_code_block(doc, '''# In SmartSupport AI configuration:
+    add_code_block(doc, '''# In Multi-Agent HR Intelligence Platform configuration:
 llm_max_tokens: int = 1000  # Enough for detailed response
 
 # Too low (50 tokens): Response gets cut off mid-sentence
@@ -1134,7 +1134,7 @@ llm_max_tokens: int = 1000  # Enough for detailed response
     add_heading(doc, "2.5 Choosing the Right LLM for Your Application", 2)
 
     doc.add_paragraph(
-        "For SmartSupport AI, we chose Groq's Llama 3.3-70B. Here's our decision process:"
+        "For Multi-Agent HR Intelligence Platform, we chose Groq's Llama 3.3-70B. Here's our decision process:"
     )
 
     headers = ["Factor", "Our Requirement", "Llama 3.3-70B via Groq"]
@@ -1234,7 +1234,7 @@ Result: Clean, parseable output''')
 
     doc.add_paragraph(
         "Every effective prompt has several components. Let's examine a real prompt from "
-        "SmartSupport AI:"
+        "Multi-Agent HR Intelligence Platform:"
     )
 
     add_code_block(doc, '''"""You are an expert customer support query classifier.
@@ -1612,7 +1612,7 @@ Final: Account issue (majority consensus)
 # More robust but slower and more expensive''')
 
     doc.add_paragraph(
-        "SmartSupport AI uses the Sequential Pipeline pattern because:"
+        "Multi-Agent HR Intelligence Platform uses the Sequential Pipeline pattern because:"
     )
 
     reasons = [
@@ -2048,7 +2048,7 @@ for i, (dist, idx) in enumerate(zip(distances[0], indices[0])):
 
     doc.add_paragraph(
         "Let's build a complete RAG pipeline step by step. This is a simplified version "
-        "of what SmartSupport AI uses."
+        "of what Multi-Agent HR Intelligence Platform uses."
     )
 
     p = doc.add_paragraph()
@@ -2237,7 +2237,7 @@ def create_part_2(doc):
 
     add_heading(doc, "6.2 Functional Requirements", 2)
 
-    doc.add_paragraph("SmartSupport AI must:")
+    doc.add_paragraph("Multi-Agent HR Intelligence Platform must:")
 
     headers = ["ID", "Requirement", "Description", "Priority"]
     rows = [
@@ -2455,7 +2455,7 @@ def generate_comprehensive_tutorial():
     create_part_2(doc)
 
     # Save progress - Part 1 complete
-    output_path = "tutorial_documentation/SmartSupport_AI_Comprehensive_Tutorial.docx"
+    output_path = "tutorial_documentation/Multi-Agent HR Intelligence Platform_AI_Comprehensive_Tutorial.docx"
     doc.save(output_path)
     print(f"\nPart 1 saved to: {output_path}")
     print("Run generate_part2() to continue...")

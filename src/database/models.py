@@ -1,5 +1,5 @@
 """
-Database models for SmartSupport AI
+Database models for Multi-Agent HR Intelligence Platform
 """
 
 from sqlalchemy import (
@@ -23,12 +23,15 @@ Base = declarative_base()
 
 
 class CategoryEnum(enum.Enum):
-    """Query category enum"""
+    """Query category enum - HR Domain"""
 
-    TECHNICAL = "Technical"
-    BILLING = "Billing"
+    RECRUITMENT = "Recruitment"
+    PAYROLL = "Payroll"
+    BENEFITS = "Benefits"
+    POLICY = "Policy"
+    LEAVE_MANAGEMENT = "LeaveManagement"
+    PERFORMANCE = "Performance"
     GENERAL = "General"
-    ACCOUNT = "Account"
 
 
 class SentimentEnum(enum.Enum):
@@ -68,12 +71,89 @@ class User(Base):
     name = Column(String(100))
     email = Column(String(100), unique=True, index=True)
     is_vip = Column(Boolean, default=False)
+
+    # HR-specific fields
+    employee_id = Column(String(50), unique=True, index=True)
+    department = Column(String(100))
+    position = Column(String(100))
+    hire_date = Column(DateTime)
+
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     # Relationships
     conversations = relationship("Conversation", back_populates="user")
     feedback = relationship("Feedback", back_populates="user")
+
+
+class Employee(Base):
+    """Employee model - Extended HR information"""
+
+    __tablename__ = "employees"
+
+    id = Column(Integer, primary_key=True, index=True)
+    employee_id = Column(String(50), unique=True, index=True, nullable=False)
+    user_id = Column(Integer, ForeignKey("users.id"), unique=True)
+
+    # Employee details
+    department = Column(String(100), nullable=False)
+    position = Column(String(100), nullable=False)
+    employment_type = Column(String(50))  # Full-time, Part-time, Contract
+    manager_id = Column(Integer, ForeignKey("employees.id"))
+
+    # Dates
+    hire_date = Column(DateTime, nullable=False)
+    termination_date = Column(DateTime)
+
+    # Compensation (stored as encrypted/hashed in production)
+    salary_band = Column(String(50))  # e.g., "Band 3", "L4"
+
+    # Status
+    is_active = Column(Boolean, default=True)
+
+    # Timestamps
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    # Relationships
+    user = relationship("User", foreign_keys=[user_id])
+    manager = relationship("Employee", remote_side=[id], foreign_keys=[manager_id])
+
+
+class JobApplication(Base):
+    """Job application tracking"""
+
+    __tablename__ = "job_applications"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    # Applicant information
+    applicant_name = Column(String(100), nullable=False)
+    applicant_email = Column(String(100), nullable=False, index=True)
+    applicant_phone = Column(String(50))
+
+    # Position details
+    position_applied = Column(String(100), nullable=False, index=True)
+    department = Column(String(100))
+    job_posting_id = Column(String(50))
+
+    # Application details
+    resume_url = Column(String(500))
+    cover_letter = Column(Text)
+    status = Column(String(50), default="Submitted", index=True)
+    # Status values: Submitted, Under Review, Interview Scheduled, Rejected, Offer Extended, Hired
+
+    # Interview tracking
+    interview_date = Column(DateTime)
+    interviewer_notes = Column(Text)
+
+    # Source
+    application_source = Column(String(100))  # e.g., "Company Website", "LinkedIn", "Referral"
+    referral_employee_id = Column(String(50))
+
+    # Timestamps
+    created_at = Column(DateTime, default=datetime.utcnow, index=True)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 
 class Conversation(Base):
@@ -173,10 +253,13 @@ class Analytics(Base):
 
     # Aggregated metrics
     total_queries = Column(Integer, default=0)
-    technical_queries = Column(Integer, default=0)
-    billing_queries = Column(Integer, default=0)
+    recruitment_queries = Column(Integer, default=0)
+    payroll_queries = Column(Integer, default=0)
+    benefits_queries = Column(Integer, default=0)
+    policy_queries = Column(Integer, default=0)
+    leave_management_queries = Column(Integer, default=0)
+    performance_queries = Column(Integer, default=0)
     general_queries = Column(Integer, default=0)
-    account_queries = Column(Integer, default=0)
 
     # Sentiment counts
     positive_count = Column(Integer, default=0)

@@ -1,8 +1,8 @@
-# SmartSupport AI - Setup Guide
+# Multi-Agent HR Intelligence Platform - Setup Guide
 
 ##  Complete Setup Instructions
 
-This guide will walk you through setting up SmartSupport AI on your local machine.
+This guide will walk you through setting up Multi-Agent HR Intelligence Platform on your local machine.
 
 ## Prerequisites
 
@@ -281,7 +281,7 @@ SELECT * FROM conversations LIMIT 5;
 
 ##  You're Ready!
 
-Once all checklist items are complete, you're ready to start building and improving SmartSupport AI!
+Once all checklist items are complete, you're ready to start building and improving Multi-Agent HR Intelligence Platform!
 
 Need help? Check the README.md or create an issue on GitHub.
 

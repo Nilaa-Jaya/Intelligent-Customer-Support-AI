@@ -1,5 +1,5 @@
 """
-FastAPI routes for SmartSupport AI
+FastAPI routes for Multi-Agent HR Intelligence Platform
 """
 
 from fastapi import APIRouter, HTTPException, Depends, BackgroundTasks

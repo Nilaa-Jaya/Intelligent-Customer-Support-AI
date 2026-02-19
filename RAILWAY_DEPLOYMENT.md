@@ -1,6 +1,6 @@
-# SmartSupport AI - Railway Deployment Guide
+# Multi-Agent HR Intelligence Platform - Railway Deployment Guide
 
-Complete guide for deploying SmartSupport AI to Railway.app with PostgreSQL.
+Complete guide for deploying Multi-Agent HR Intelligence Platform to Railway.app with PostgreSQL.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ Complete guide for deploying SmartSupport AI to Railway.app with PostgreSQL.
 
 ## Overview
 
-Railway is a modern platform-as-a-service (PaaS) that simplifies deployment. This guide walks through deploying SmartSupport AI with:
+Railway is a modern platform-as-a-service (PaaS) that simplifies deployment. This guide walks through deploying Multi-Agent HR Intelligence Platform with:
 
 - **Application:** FastAPI + LangGraph AI agents
 - **Database:** PostgreSQL (managed by Railway)

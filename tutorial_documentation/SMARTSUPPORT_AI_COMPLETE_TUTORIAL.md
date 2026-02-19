@@ -1,4 +1,4 @@
-# SmartSupport AI: Building Intelligent Customer Support Systems
+# Multi-Agent HR Intelligence Platform: Building Intelligent Customer Support Systems
 
 ## A Complete Guide from First Principles to Production Implementation
 
@@ -222,11 +222,11 @@ Understanding the evolution helps contextualize where AI customer support fits:
 - Can generate human-like responses
 - Retrieval-Augmented Generation (RAG) grounds responses in factual knowledge
 - Multi-agent architectures enable specialized handling
-- **This is where SmartSupport AI operates**
+- **This is where Multi-Agent HR Intelligence Platform operates**
 
 ### 1.4 Real-World Applications and Use Cases
 
-SmartSupport AI is designed to handle these scenarios:
+Multi-Agent HR Intelligence Platform is designed to handle these scenarios:
 
 **Technical Support Queries:**
 ```
@@ -271,7 +271,7 @@ A Large Language Model (LLM) is a type of artificial intelligence trained on mas
 **Analogy for Developers:**
 Think of an LLM as an incredibly sophisticated autocomplete. When you type in an IDE and it suggests the next function or variable, it's using patterns it learned from code. An LLM does the same thing for natural language, but at a much deeper level - it understands context, can follow instructions, and generates coherent multi-paragraph responses.
 
-**How SmartSupport AI Uses LLMs:**
+**How Multi-Agent HR Intelligence Platform Uses LLMs:**
 
 We use the Groq API with Llama 3.3-70B, a state-of-the-art open-source LLM. Here's how it's configured:
 
@@ -421,7 +421,7 @@ In AI terms, an **agent** is a component that:
 **Analogy: Microservices Architecture**
 If you're familiar with microservices, agents are similar. Just as microservices split a monolithic application into specialized services, multi-agent systems split AI processing into specialized agents.
 
-In SmartSupport AI, we have 7 specialized agents:
+In Multi-Agent HR Intelligence Platform, we have 7 specialized agents:
 
 | Agent | Purpose | Input | Output |
 |-------|---------|-------|--------|
@@ -490,7 +490,7 @@ Orchestrator Agent
 ```
 A master agent delegates to sub-agents.
 
-**SmartSupport AI uses Sequential + Conditional Routing:**
+**Multi-Agent HR Intelligence Platform uses Sequential + Conditional Routing:**
 
 ```python
 # From src/agents/workflow.py
@@ -1024,7 +1024,7 @@ Our System: Detects angry sentiment, priority 8+
 
 **Comparison:**
 
-| Feature | Baseline | SmartSupport AI |
+| Feature | Baseline | Multi-Agent HR Intelligence Platform |
 |---------|----------|-----------------|
 | Response Accuracy | 60-70% | 90%+ |
 | Tone Appropriateness | Poor | Excellent |
@@ -1206,7 +1206,7 @@ def parse_llm_category(raw_category: str) -> str:
 ```
 
 **Why parse?** LLM might return:
-- "Technical" ✓
+- "Technical" [OK]
 - "technical" (lowercase)
 - "Technical issue" (extra words)
 - "Tech" (abbreviation)
@@ -2409,7 +2409,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
-    title="SmartSupport AI",
+    title="Multi-Agent HR Intelligence Platform",
     description="Intelligent Customer Support Agent",
     version="2.2.0",
     docs_url="/docs",
@@ -2526,13 +2526,13 @@ The web interface uses vanilla HTML/CSS/JavaScript for simplicity:
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SmartSupport AI</title>
+    <title>Multi-Agent HR Intelligence Platform</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <h1>SmartSupport AI</h1>
+            <h1>Multi-Agent HR Intelligence Platform</h1>
             <p>Intelligent Customer Support</p>
         </div>
 
@@ -3212,7 +3212,7 @@ With this knowledge, you can:
 
 ## Final Thoughts
 
-Building AI systems is not about replacing humans - it's about augmenting human capabilities. SmartSupport AI handles routine queries efficiently, freeing human agents to focus on complex issues requiring empathy, creativity, and judgment.
+Building AI systems is not about replacing humans - it's about augmenting human capabilities. Multi-Agent HR Intelligence Platform handles routine queries efficiently, freeing human agents to focus on complex issues requiring empathy, creativity, and judgment.
 
 The techniques in this tutorial - multi-agent orchestration, RAG, state management, and production deployment - are applicable far beyond customer support. They form a foundation for building intelligent applications across many domains.
 
@@ -3222,7 +3222,7 @@ The techniques in this tutorial - multi-agent orchestration, RAG, state manageme
 
 ---
 
-*This tutorial was created to provide a comprehensive guide to the SmartSupport AI project. The source code is available under the MIT license.*
+*This tutorial was created to provide a comprehensive guide to the Multi-Agent HR Intelligence Platform project. The source code is available under the MIT license.*
 
 **Document Statistics:**
 - Chapters: 27

@@ -1,4 +1,4 @@
-# SmartSupport AI - Features Documentation
+# Multi-Agent HR Intelligence Platform - Features Documentation
 
 ## Complete Feature List
 
@@ -477,4 +477,4 @@ def should_escalate(...):
 
 ---
 
-This comprehensive feature set makes SmartSupport AI a professional, production-ready customer support system! 
+This comprehensive feature set makes Multi-Agent HR Intelligence Platform a professional, production-ready customer support system! 

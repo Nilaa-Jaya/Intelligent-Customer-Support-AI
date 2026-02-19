@@ -1,4 +1,4 @@
-/* SmartSupport AI - Premium Professional Theme */
+/* Multi-Agent HR Intelligence Platform - Premium Professional Theme */
 
 * {
     margin: 0;
@@ -379,16 +379,29 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
-.badge-category-technical {
-    background: linear-gradient(135deg, #3B82F6, #2563EB);
+/* HR Category Badge Styles */
+.badge-category-recruitment {
+    background: linear-gradient(135deg, #10B981, #059669);
     color: white;
 }
-.badge-category-billing {
+.badge-category-payroll {
     background: linear-gradient(135deg, #F59E0B, #D97706);
     color: white;
 }
-.badge-category-account {
-    background: linear-gradient(135deg, #10B981, #059669);
+.badge-category-benefits {
+    background: linear-gradient(135deg, #3B82F6, #2563EB);
+    color: white;
+}
+.badge-category-policy {
+    background: linear-gradient(135deg, #6366F1, #4F46E5);
+    color: white;
+}
+.badge-category-leavemanagement {
+    background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+    color: white;
+}
+.badge-category-performance {
+    background: linear-gradient(135deg, #EC4899, #DB2777);
     color: white;
 }
 .badge-category-general {

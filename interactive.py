@@ -1,5 +1,5 @@
 """
-Interactive CLI for SmartSupport AI
+Interactive CLI for Multi-Agent HR Intelligence Platform
 Test the customer support agent interactively
 """
 
@@ -16,7 +16,7 @@ from src.main import get_customer_support_agent
 def print_header():
     """Print welcome header"""
     print("\n" + "=" * 80)
-    print(" SmartSupport AI - Interactive Customer Support Agent")
+    print(" Multi-Agent HR Intelligence Platform - Interactive Customer Support Agent")
     print("=" * 80)
     print("\nCommands:")
     print("  - Type your query to get support")
@@ -31,13 +31,13 @@ def print_response(response):
     """Pretty print response"""
     print("\n" + "─" * 80)
     print(f" Category: {response['category']}")
-    print(f"😊 Sentiment: {response['sentiment']}")
+    print(f" Sentiment: {response['sentiment']}")
     print(f"* Priority: {response['priority']}/10")
     print(f"  Processing Time: {response['metadata']['processing_time']:.3f}s")
 
     if response["metadata"].get("escalated"):
         print(
-            f"🚨 Escalated: Yes - {response['metadata'].get('escalation_reason', 'N/A')}"
+            f"[ESCALATED] Escalated: Yes - {response['metadata'].get('escalation_reason', 'N/A')}"
         )
 
     print("\n Response:")
@@ -48,7 +48,7 @@ def print_response(response):
 def print_history(history):
     """Print conversation history"""
     if not history:
-        print("\n📭 No conversation history found.\n")
+        print("\n No conversation history found.\n")
         return
 
     print("\n" + "─" * 80)
@@ -56,7 +56,7 @@ def print_history(history):
     print("─" * 80)
 
     for i, conv in enumerate(history, 1):
-        status = "🚨 ESCALATED" if conv["escalated"] else "[DONE] RESOLVED"
+        status = "[ESCALATED] ESCALATED" if conv["escalated"] else "[DONE] RESOLVED"
         print(f"\n{i}. [{conv['category']}] {status}")
         print(f"   Query: {conv['query'][:70]}...")
         print(f"   Time: {conv['timestamp']}")
@@ -84,7 +84,7 @@ def main():
     if not user_id:
         user_id = "demo_user"
 
-    print(f"\n👤 User: {user_id}\n")
+    print(f"\n[User] User: {user_id}\n")
     print("Type your support query below:\n")
 
     query_count = 0
@@ -100,7 +100,7 @@ def main():
 
             # Handle commands
             if user_input.lower() in ["quit", "exit"]:
-                print("\n👋 Thank you for using SmartSupport AI. Goodbye!\n")
+                print("\n Thank you for using Multi-Agent HR Intelligence Platform. Goodbye!\n")
                 break
 
             elif user_input.lower() == "history":
@@ -137,7 +137,7 @@ def main():
             print_response(response)
 
         except KeyboardInterrupt:
-            print("\n\n👋 Thank you for using SmartSupport AI. Goodbye!\n")
+            print("\n\n Thank you for using Multi-Agent HR Intelligence Platform. Goodbye!\n")
             break
 
         except Exception as e:

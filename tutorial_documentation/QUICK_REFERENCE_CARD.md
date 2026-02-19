@@ -1,4 +1,4 @@
-# SmartSupport AI - Quick Reference Card
+# Multi-Agent HR Intelligence Platform - Quick Reference Card
 
 ## System Architecture at a Glance
 

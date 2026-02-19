@@ -8,7 +8,7 @@
 
 ## Summary
 
-The webhook system has been fully integrated into the SmartSupport AI application. All webhooks now trigger automatically when events occur, with comprehensive test coverage and production-ready code.
+The webhook system has been fully integrated into the Multi-Agent HR Intelligence Platform application. All webhooks now trigger automatically when events occur, with comprehensive test coverage and production-ready code.
 
 ---
 
@@ -334,12 +334,12 @@ Every webhook delivery includes signature in headers:
 X-Webhook-Signature: a1b2c3d4e5f6...
 X-Webhook-Timestamp: 2025-11-24T12:00:00Z
 X-Webhook-ID: 550e8400-e29b-41d4-a716-446655440000
-User-Agent: SmartSupport-Webhook/1.0
+User-Agent: Multi-Agent HR Intelligence Platform-Webhook/1.0
 Content-Type: application/json
 ```
 
 **Security Benefits:**
-- [DONE] Confirms webhook came from SmartSupport AI
+- [DONE] Confirms webhook came from Multi-Agent HR Intelligence Platform
 - [DONE] Prevents payload tampering
 - [DONE] Enables timing-safe verification
 - [DONE] Industry-standard approach (used by GitHub, Stripe, etc.)

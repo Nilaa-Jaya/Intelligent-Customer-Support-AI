@@ -77,7 +77,7 @@ async def deliver_webhook(
         "X-Webhook-Signature": signature,
         "X-Webhook-Timestamp": timestamp,
         "X-Webhook-ID": webhook.id,
-        "User-Agent": "SmartSupport-Webhook/1.0",
+        "User-Agent": "Multi-Agent HR Intelligence Platform-Webhook/1.0",
     }
 
     # Retry logic with exponential backoff

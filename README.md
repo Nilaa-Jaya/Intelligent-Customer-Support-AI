@@ -1,8 +1,8 @@
-# SmartSupport AI - Intelligent Customer Support System
+# Multi-Agent HR Intelligence Platform
 
-> **Production-Ready AI-Powered Customer Support with Multi-Agent Architecture, RAG, and Webhook Integrations**
+> **Production-Ready AI-Powered HR Assistant with Multi-Agent Architecture, RAG, and Webhook Integrations**
 
-An enterprise-grade, intelligent customer support system powered by LangChain, LangGraph, and advanced LLMs. Features multi-agent orchestration, semantic knowledge base retrieval, real-time web interface, and comprehensive webhook integrations.
+An enterprise-grade, intelligent HR support system powered by LangChain, LangGraph, and advanced LLMs. Specialized for employee inquiries across Recruitment, Payroll, Benefits, Leave Management, Performance, and Policies. Features multi-agent orchestration, semantic knowledge base retrieval, real-time web interface, and comprehensive webhook integrations.
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![LangChain](https://img.shields.io/badge/LangChain-0.3.10-green.svg)
@@ -19,8 +19,8 @@ An enterprise-grade, intelligent customer support system powered by LangChain, L
 
 - [Features](#features)
 - [Demo](#demo)
-- [Technology Stack](#️-technology-stack)
-- [Architecture](#️-architecture)
+- [Technology Stack](#-technology-stack)
+- [Architecture](#-architecture)
 - [Quick Start](#-quick-start)
 - [Docker Deployment](#-docker-deployment)
 - [Railway Deployment](#-railway-deployment)
@@ -29,7 +29,7 @@ An enterprise-grade, intelligent customer support system powered by LangChain, L
 - [Testing](#-testing)
 - [Project Structure](#-project-structure)
 - [Performance Metrics](#-performance-metrics)
-- [Roadmap](#️-roadmap)
+- [Roadmap](#-roadmap)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -40,63 +40,63 @@ An enterprise-grade, intelligent customer support system powered by LangChain, L
 ### Phase 1: Core AI System [DONE]
 
 **Multi-Agent Architecture**
--  **7 Specialized AI Agents** - Categorizer, Sentiment Analyzer, Technical, Billing, General, Escalation, KB Retrieval
+-  **9 Specialized HR Agents** - Categorizer, Sentiment Analyzer, Recruitment, Payroll, Benefits, Policy, LeaveManagement, Performance, General, Escalation, KB Retrieval
 -  **LangGraph Workflow** - Stateful orchestration with conditional routing
--  **Intelligent Routing** - Context-aware query categorization (Technical/Billing/Account/General)
-- 😊 **Sentiment Analysis** - 4-level emotional tone detection (Positive/Neutral/Negative/Angry)
+-  **Intelligent Routing** - Context-aware query categorization across 7 HR domains (Recruitment/Payroll/Benefits/Policy/LeaveManagement/Performance/General)
+-  **Sentiment Analysis** - 4-level emotional tone detection (Positive/Neutral/Negative/Angry)
 -  **Dynamic Priority Scoring** - 1-10 scale based on sentiment, category, and context
-- 🚨 **Smart Escalation** - Multi-trigger escalation (priority ≥8, angry sentiment, keywords, attempts ≥3)
+- [ESCALATED] **Smart Escalation** - Multi-trigger escalation (priority ≥8, angry sentiment, keywords, attempts ≥3)
 
 **Database & Storage**
-- 💾 **SQLAlchemy ORM** - 6 core tables + 2 webhook tables
-- 🗃️ **PostgreSQL/SQLite Support** - Production PostgreSQL with SSL, SQLite for development
+-  **SQLAlchemy ORM** - 6 core tables + 2 webhook tables
+-  **PostgreSQL/SQLite Support** - Production PostgreSQL with SSL, SQLite for development
 -  **Conversation Tracking** - Full conversation history with messages, metadata, and analytics
-- 👤 **User Management** - User profiles with VIP support
+- [User] **User Management** - User profiles with VIP support
 -  **Analytics** - Query metrics, sentiment trends, performance tracking
 
 ### Phase 2: RAG + Web Interface [DONE]
 
 **Knowledge Base (RAG)**
 -  **FAISS Vector Store** - Semantic similarity search with 90%+ accuracy
--  **30 Comprehensive FAQs** - Across all support categories
-- 🧠 **Sentence Transformers** - all-MiniLM-L6-v2 embeddings
+-  **42 Comprehensive HR FAQs** - Covering all 7 HR domains (Recruitment, Payroll, Benefits, Policy, LeaveManagement, Performance, General)
+-  **Sentence Transformers** - all-MiniLM-L6-v2 embeddings
 -  **Top-K Retrieval** - Relevant FAQ retrieval with similarity scoring
--  **Efficient Indexing** - Fast vector search optimized for real-time queries
+-  **Efficient Indexing** - Fast vector search optimized for real-time employee queries
 
 **FastAPI REST API**
 -  **15+ RESTful Endpoints** - Complete CRUD operations
 -  **Pydantic Validation** - Type-safe request/response schemas
-- 📖 **Auto-Generated Docs** - Swagger UI and ReDoc
+-  **Auto-Generated Docs** - Swagger UI and ReDoc
 -  **Async/Await** - High-performance async operations
 -  **CORS Support** - Cross-origin resource sharing configured
 - [DONE] **Health Checks** - Built-in health monitoring endpoint
 
 **Web Interface**
--  **ChatGPT-Style UI** - Modern, intuitive chat interface
--  **Beautiful Design** - Clean white/blue theme, responsive layout
+-  **ChatGPT-Style UI** - Modern, intuitive chat interface for HR queries
+-  **Beautiful Design** - Clean design with HR-themed color coding (7 category colors)
 -  **Mobile Responsive** - Optimized for all screen sizes
 -  **Real-Time Updates** - Live query analysis display
--  **Analytics Display** - Category, sentiment, priority indicators
-- 📥 **Export Functionality** - Download conversations as JSON
+-  **Analytics Display** - HR category, sentiment, priority indicators
+-  **Export Functionality** - Download conversations as JSON
 -  **Fast Performance** - <1s response time
 -  **KB Results Display** - Relevant FAQ articles shown with responses
 
 **Alternative UI**
-- 🎛️ **Gradio Interface** - Quick testing and demonstrations
+-  **Gradio Interface** - Quick testing and demonstrations
 -  **KB Visualization** - Browse knowledge base entries
 -  **Real-Time Metrics** - Live performance statistics
 
 ### Phase 3: Production Infrastructure [DONE]
 
 **Docker Containerization**
-- 🐳 **Multi-Stage Dockerfile** - Optimized image size (<2GB)
+-  **Multi-Stage Dockerfile** - Optimized image size (<2GB)
 -  **docker-compose** - Development and production configurations
 - [DONE] **Health Checks** - Container health monitoring
-- 💾 **Volume Mounts** - Persistent data storage
+-  **Volume Mounts** - Persistent data storage
 -  **Network Isolation** - Secure container networking
 
 **CI/CD Pipeline**
-- ⚙️ **GitHub Actions** - Automated workflows for test, build, deploy
+-  **GitHub Actions** - Automated workflows for test, build, deploy
 - [DONE] **Automated Testing** - 38 tests run on every PR/push
 -  **Code Quality Checks** - flake8 linting, black formatting
 -  **Security Scanning** - Trivy vulnerability scanning
@@ -104,11 +104,11 @@ An enterprise-grade, intelligent customer support system powered by LangChain, L
 -  **Automated Deployment** - One-click deploy to Railway
 
 **Railway Deployment**
-- ☁️ **One-Click Deploy** - Complete Railway configuration
-- 🗄️ **PostgreSQL Integration** - Managed database with SSL
-- 🔐 **Environment Variables** - Secure secrets management
+-  **One-Click Deploy** - Complete Railway configuration
+-  **PostgreSQL Integration** - Managed database with SSL
+-  **Environment Variables** - Secure secrets management
 -  **Automatic HTTPS** - SSL certificates included
-- 🌍 **Custom Domains** - Support for custom domain names
+-  **Custom Domains** - Support for custom domain names
 -  **Zero-Downtime** - Graceful deployments
 -  **Health Monitoring** - Automatic health checks
 
@@ -116,38 +116,38 @@ An enterprise-grade, intelligent customer support system powered by LangChain, L
 -  **Gunicorn WSGI** - Production-grade server
 -  **Uvicorn Workers** - 4 async workers for high concurrency
 -  **Connection Pooling** - Optimized database connections
-- 🛡️ **Graceful Shutdown** - Clean process termination
+-  **Graceful Shutdown** - Clean process termination
 -  **Request Logging** - Comprehensive access logs
 -  **Timeout Handling** - Request timeout configuration
 
 **Webhook System**
 -  **7 Management Endpoints** - Complete webhook CRUD operations
-- 📡 **4 Event Types** - query.created, query.resolved, query.escalated, feedback.received
+-  **4 Event Types** - query.created, query.resolved, query.escalated, feedback.received
 -  **HMAC-SHA256 Security** - Cryptographic signature verification
 -  **Automatic Retries** - 3 attempts with exponential backoff (1s, 2s, 4s)
 -  **Delivery Logging** - Complete audit trail of all deliveries
 -  **Statistics Tracking** - Success/failure counts per webhook
 -  **Non-Blocking Execution** - Background delivery, zero API impact
-- 🔀 **Parallel Delivery** - Simultaneous delivery to multiple webhooks
+-  **Parallel Delivery** - Simultaneous delivery to multiple webhooks
 - [DONE] **Test Endpoint** - Verify webhook configuration
 
 **Testing & Quality**
 - [DONE] **38 Automated Tests** - Comprehensive test suite (16 basic + 22 webhook)
 -  **42% Code Coverage** - Exceeds minimum 25% requirement
-- 🧪 **Unit Tests** - All components tested
-- 🔗 **Integration Tests** - End-to-end testing
+- [TEST] **Unit Tests** - All components tested
+-  **Integration Tests** - End-to-end testing
 -  **Async Test Support** - pytest-asyncio integration
 -  **Mock Testing** - Isolated component testing
-- 💯 **100% Pass Rate** - All tests passing
+-  **100% Pass Rate** - All tests passing
 
 **Security**
-- 🔐 **HMAC Signatures** - Webhook payload verification
+-  **HMAC Signatures** - Webhook payload verification
 -  **Environment Variables** - Secure secret management
-- 🛡️ **SQL Injection Protection** - SQLAlchemy ORM
+-  **SQL Injection Protection** - SQLAlchemy ORM
 - [DONE] **Input Validation** - Pydantic schemas
 -  **CORS Configuration** - Secure cross-origin requests
 -  **SSL/TLS Support** - Encrypted connections
-- 🔑 **Secure Key Generation** - 32-byte URL-safe tokens
+-  **Secure Key Generation** - 32-byte URL-safe tokens
 
 ---
 
@@ -167,13 +167,13 @@ from src.main import get_customer_support_agent
 # Initialize agent
 agent = get_customer_support_agent()
 
-# Process query
+# Process HR query
 response = agent.process_query(
-    query="My application keeps crashing when I try to export data",
-    user_id="user_123"
+    query="How do I update my tax withholdings?",
+    user_id="emp_123"
 )
 
-print(f"Category: {response['category']}")        # Technical
+print(f"Category: {response['category']}")        # Payroll
 print(f"Sentiment: {response['sentiment']}")      # Negative
 print(f"Priority: {response['priority']}")        # 7
 print(f"Response: {response['response']}")
@@ -182,7 +182,7 @@ print(f"Response: {response['response']}")
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 ### Backend
 - **Python** 3.10+ - Core language
@@ -397,16 +397,30 @@ python run_ui.py
 from src.main import get_customer_support_agent
 
 agent = get_customer_support_agent()
-response = agent.process_query(
-    query="How do I reset my password?",
-    user_id="user_123"
-)
-print(response)
+
+# Example HR queries
+responses = [
+    agent.process_query(
+        query="When is payday?",
+        user_id="emp_123"
+    ),
+    agent.process_query(
+        query="How do I request 3 days of vacation in December?",
+        user_id="emp_123"
+    ),
+    agent.process_query(
+        query="How do I enroll in health insurance?",
+        user_id="emp_456"
+    ),
+]
+
+for response in responses:
+    print(response)
 ```
 
 ---
 
-## 🐳 Docker Deployment
+##  Docker Deployment
 
 ### Quick Start with Docker
 
@@ -441,7 +455,7 @@ docker run -p 8000:8000 --env-file .env smartsupport-ai
 
 ---
 
-## ☁️ Railway Deployment
+##  Railway Deployment
 
 ### One-Click Deploy to Railway
 
@@ -553,11 +567,11 @@ See [API_DOCUMENTATION.md](docs/API_DOCUMENTATION.md) for full endpoint referenc
 
 ---
 
-## 🔗 Webhook Integration
+##  Webhook Integration
 
 ### Overview
 
-SmartSupport AI supports webhooks for real-time event notifications to third-party systems.
+Multi-Agent HR Intelligence Platform supports webhooks for real-time event notifications to third-party systems.
 
 ### Event Types
 
@@ -645,7 +659,7 @@ See [WEBHOOK_GUIDE.md](WEBHOOK_GUIDE.md) for complete documentation including:
 
 ---
 
-## 🧪 Testing
+## [TEST] Testing
 
 ### Run All Tests
 
@@ -701,7 +715,7 @@ black src/
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 smartsupport-ai/
@@ -804,7 +818,7 @@ smartsupport-ai/
 
 ---
 
-## 🗺️ Roadmap
+##  Roadmap
 
 ### Phase 1: Foundation [DONE] COMPLETE
 - [x] Project structure and configuration
@@ -861,7 +875,7 @@ smartsupport-ai/
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -885,13 +899,13 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👤 Author
+## [User] Author
 
 **Your Name**
 - GitHub: [@yourusername](https://github.com/yourusername)
@@ -900,7 +914,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Built with [LangChain](https://www.langchain.com/) and [LangGraph](https://www.langchain.com/langgraph)
 - Powered by [Groq](https://groq.com/) LLM inference
@@ -911,7 +925,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 Support
+##  Support
 
 ### Getting Help
 

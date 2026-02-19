@@ -1,4 +1,4 @@
-"""Basic tests for SmartSupport AI"""
+"""Basic tests for Multi-Agent HR Intelligence Platform"""
 
 import pytest
 from unittest.mock import Mock, patch

@@ -1,5 +1,5 @@
 """
-FastAPI web interface for SmartSupport AI
+FastAPI web interface for Multi-Agent HR Intelligence Platform
 """
 
 from src.api.app import app, run_server

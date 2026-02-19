@@ -1,8 +1,8 @@
-# SmartSupport AI - Tutorial Documentation
+# Multi-Agent HR Intelligence Platform - Tutorial Documentation
 
 ## Documentation Index
 
-Welcome to the SmartSupport AI comprehensive tutorial documentation. This folder contains everything you need to understand, use, and extend the SmartSupport AI system.
+Welcome to the Multi-Agent HR Intelligence Platform comprehensive tutorial documentation. This folder contains everything you need to understand, use, and extend the Multi-Agent HR Intelligence Platform system.
 
 ---
 
@@ -118,7 +118,7 @@ Copy-paste templates for:
 ## Version Information
 
 - **Documentation Version:** 1.0.0
-- **SmartSupport AI Version:** 2.2.0
+- **Multi-Agent HR Intelligence Platform Version:** 2.2.0
 - **Last Updated:** January 2026
 
 ---

@@ -679,7 +679,7 @@ Response:"""
 
     add_heading(doc, "13.1 When to Escalate", 2)
 
-    doc.add_paragraph("Escalation triggers in SmartSupport AI:")
+    doc.add_paragraph("Escalation triggers in Multi-Agent HR Intelligence Platform:")
 
     headers = ["Trigger", "Threshold", "Rationale"]
     rows = [
@@ -1021,7 +1021,7 @@ class Settings(BaseSettings):
     database_url: str = "sqlite:///./smartsupport.db"
 
     # Application
-    app_name: str = "SmartSupport AI"
+    app_name: str = "Multi-Agent HR Intelligence Platform"
     debug: bool = False
     environment: str = "development"
 
@@ -1157,7 +1157,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
-    title="SmartSupport AI",
+    title="Multi-Agent HR Intelligence Platform",
     description="Intelligent Customer Support Agent",
     version="2.2.0",
     docs_url="/docs",     # Swagger UI
@@ -1338,7 +1338,7 @@ pytest tests/test_basic.py -v
 # Run specific test
 pytest tests/test_basic.py::test_technical_query_categorization -v''')
 
-    doc.add_paragraph("Test results for SmartSupport AI:")
+    doc.add_paragraph("Test results for Multi-Agent HR Intelligence Platform:")
 
     add_code_block(doc, '''============================= test session starts =============================
 collected 38 items
@@ -1692,7 +1692,7 @@ def create_conclusion(doc):
     # Document info
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p.add_run("SmartSupport AI - Comprehensive Tutorial")
+    p.add_run("Multi-Agent HR Intelligence Platform - Comprehensive Tutorial")
     doc.add_paragraph()
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -1702,7 +1702,7 @@ def create_conclusion(doc):
 def complete_tutorial():
     """Complete the tutorial by adding remaining parts to existing document."""
     print("Loading existing document...")
-    doc = Document("tutorial_documentation/SmartSupport_AI_Comprehensive_Tutorial.docx")
+    doc = Document("tutorial_documentation/Multi-Agent HR Intelligence Platform_AI_Comprehensive_Tutorial.docx")
 
     print("Adding Part 3: Building the Agents...")
     create_part_3_agents(doc)
@@ -1719,7 +1719,7 @@ def complete_tutorial():
     print("Adding Conclusion...")
     create_conclusion(doc)
 
-    output_path = "tutorial_documentation/SmartSupport_AI_Comprehensive_Tutorial.docx"
+    output_path = "tutorial_documentation/Multi-Agent HR Intelligence Platform_AI_Comprehensive_Tutorial.docx"
     doc.save(output_path)
     print(f"\nComplete tutorial saved to: {output_path}")
 

@@ -1,5 +1,5 @@
 """
-Generate comprehensive Word document tutorial for SmartSupport AI
+Generate comprehensive Word document tutorial for Multi-Agent HR Intelligence Platform
 """
 
 from docx import Document
@@ -97,7 +97,7 @@ def generate_tutorial():
     # TITLE PAGE
     # ========================================
 
-    title = doc.add_heading('SmartSupport AI', 0)
+    title = doc.add_heading('Multi-Agent HR Intelligence Platform', 0)
     title.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
     subtitle = doc.add_paragraph()
@@ -360,7 +360,7 @@ def generate_tutorial():
     p = doc.add_paragraph()
     run = p.add_run("Generation 3: Conversational AI + LLMs (2020s - Present)")
     run.bold = True
-    doc.add_paragraph("Large Language Models understand context and nuance. Can generate human-like responses. RAG grounds responses in factual knowledge. This is where SmartSupport AI operates.")
+    doc.add_paragraph("Large Language Models understand context and nuance. Can generate human-like responses. RAG grounds responses in factual knowledge. This is where Multi-Agent HR Intelligence Platform operates.")
 
     # Chapter 2
     add_heading(doc, "Chapter 2: Understanding Large Language Models (LLMs)", 2)
@@ -395,7 +395,7 @@ def generate_tutorial():
         "but at a much deeper level."
     )
 
-    doc.add_paragraph("How SmartSupport AI Uses LLMs:")
+    doc.add_paragraph("How Multi-Agent HR Intelligence Platform Uses LLMs:")
     doc.add_paragraph("We use the Groq API with Llama 3.3-70B, a state-of-the-art open-source LLM:")
 
     add_code_block(doc, '''# From src/utils/config.py
@@ -494,7 +494,7 @@ Category:"""''')
         "multi-agent systems split AI processing into specialized agents."
     )
 
-    doc.add_paragraph("SmartSupport AI has 7 specialized agents:")
+    doc.add_paragraph("Multi-Agent HR Intelligence Platform has 7 specialized agents:")
 
     headers = ["Agent", "Purpose", "Output"]
     rows = [
@@ -964,7 +964,7 @@ Results: Top 3 most relevant FAQs''')
     # Chapter 11-13
     add_heading(doc, "Chapter 11-13: Response Agents", 2)
 
-    doc.add_paragraph("SmartSupport AI has four specialized response agents:")
+    doc.add_paragraph("Multi-Agent HR Intelligence Platform has four specialized response agents:")
 
     add_heading(doc, "Technical Agent", 3)
     doc.add_paragraph("Handles software bugs, configuration, performance issues:")
@@ -1441,7 +1441,7 @@ CMD ["gunicorn", "src.api.app:app", \\
     final.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
     # Save document
-    output_path = "tutorial_documentation/SmartSupport_AI_Complete_Tutorial.docx"
+    output_path = "tutorial_documentation/Multi-Agent HR Intelligence Platform_AI_Complete_Tutorial.docx"
     doc.save(output_path)
     print(f"Document saved to: {output_path}")
     return output_path

@@ -1,6 +1,6 @@
-# SmartSupport AI - Webhook Integration Guide
+# Multi-Agent HR Intelligence Platform - Webhook Integration Guide
 
-Complete guide for integrating with SmartSupport AI using webhooks.
+Complete guide for integrating with Multi-Agent HR Intelligence Platform using webhooks.
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ Complete guide for integrating with SmartSupport AI using webhooks.
 
 ## Overview
 
-Webhooks allow you to receive real-time notifications when events occur in SmartSupport AI. Instead of polling for updates, your application will receive HTTP POST requests to a URL you specify.
+Webhooks allow you to receive real-time notifications when events occur in Multi-Agent HR Intelligence Platform. Instead of polling for updates, your application will receive HTTP POST requests to a URL you specify.
 
 **Use Cases:**
 - Notify your team when queries are escalated
@@ -79,7 +79,7 @@ curl -X POST https://your-api.com/api/v1/webhooks/{webhook_id}/test
 
 ## Event Types
 
-SmartSupport AI supports the following event types:
+Multi-Agent HR Intelligence Platform supports the following event types:
 
 ### `query.created`
 Triggered when a new customer query is received.
@@ -188,7 +188,7 @@ All webhook deliveries include these headers for verification:
 
 ### Why Verify Signatures?
 
-- Confirms the webhook came from SmartSupport AI
+- Confirms the webhook came from Multi-Agent HR Intelligence Platform
 - Prevents replay attacks
 - Ensures payload wasn't tampered with
 
@@ -221,7 +221,7 @@ All webhooks follow this structure:
 
 ### How It Works
 
-1. SmartSupport AI generates HMAC-SHA256 hash of the payload using your secret_key
+1. Multi-Agent HR Intelligence Platform generates HMAC-SHA256 hash of the payload using your secret_key
 2. Hash is sent in `X-Webhook-Signature` header
 3. You generate the same hash and compare
 
@@ -360,7 +360,7 @@ curl -X POST https://your-api.com/api/v1/webhooks \
 
 ### Automatic Retries
 
-SmartSupport AI automatically retries failed webhook deliveries:
+Multi-Agent HR Intelligence Platform automatically retries failed webhook deliveries:
 
 - **Attempts:** 3 total attempts
 - **Backoff:** Exponential (1s, 2s, 4s)
