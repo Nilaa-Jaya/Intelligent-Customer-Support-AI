@@ -28,8 +28,8 @@ def setup_logger():
 
     logger.add(
         settings.log_file,
-        rotation="500 MB",
-        retention="10 days",
+        rotation="100 MB",
+        retention="30 days",
         compression="zip",
         format="{time:YYYY-MM-DD HH:mm:ss} | {level: <8} | {name}:{function}:{line} - {message}",
         level=settings.log_level,

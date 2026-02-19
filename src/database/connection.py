@@ -43,6 +43,7 @@ else:
         pool_size=10,  # Number of connections to maintain
         max_overflow=20,  # Maximum overflow connections
         pool_recycle=3600,  # Recycle connections after 1 hour
+        pool_timeout=30,  # Timeout waiting for a connection
         echo=settings.debug,
     )
 

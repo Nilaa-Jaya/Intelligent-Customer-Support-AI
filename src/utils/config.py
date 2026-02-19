@@ -22,9 +22,10 @@ class Settings(BaseSettings):
 
     # Application
     app_name: str = "SmartSupport AI"
-    app_version: str = "1.0.0"
+    app_version: str = "1.0.1"
     debug: bool = os.getenv("ENVIRONMENT", "development") != "production"
     environment: str = os.getenv("ENVIRONMENT", "development")
+    request_timeout: int = 30
 
     # Railway Configuration
     port: int = int(os.getenv("PORT", 8000))  # Railway sets PORT

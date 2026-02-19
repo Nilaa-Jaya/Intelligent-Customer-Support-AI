@@ -6,13 +6,12 @@ from datetime import datetime, timedelta
 from typing import Optional, Dict, Any
 import hashlib
 import json
+import uuid
 
 
 def generate_conversation_id() -> str:
-    """Generate unique conversation ID"""
-    timestamp = datetime.now().isoformat()
-    hash_obj = hashlib.md5(timestamp.encode())
-    return f"conv_{hash_obj.hexdigest()[:12]}"
+    """Generate unique conversation ID using UUID4"""
+    return f"conv_{uuid.uuid4().hex[:12]}"
 
 
 def calculate_priority_score(

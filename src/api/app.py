@@ -20,7 +20,7 @@ from src.utils import app_logger
 app = FastAPI(
     title="SmartSupport AI",
     description="Intelligent Customer Support Agent with KB Integration",
-    version="2.2.0",
+    version="2.2.1",
     docs_url="/docs",
     redoc_url="/redoc",
 )

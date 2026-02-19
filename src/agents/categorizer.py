@@ -48,8 +48,8 @@ def categorize_query(state: AgentState) -> AgentState:
         context = ""
         if state.get("conversation_history"):
             context = "Previous conversation context:\n"
-            for msg in state["conversation_history"][-3:]:
-                context += f"{msg['role']}: {msg['content'][:100]}\n"
+            for msg in state["conversation_history"][-5:]:
+                context += f"{msg['role']}: {msg['content'][:150]}\n"
 
         # Invoke LLM
         raw_category = llm_manager.invoke_with_retry(
